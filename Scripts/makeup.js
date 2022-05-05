@@ -2,22 +2,52 @@
     import {navbar,fotter} from "../Components/navbar.js"
 
     document.getElementById("footer").innerHTML=fotter();
+    document.getElementById("navbar").innerHTML=navbar();
+    var container=document.getElementById("container");
 
 
-document.getElementById("navbar").innerHTML=navbar();
-
- var container=document.getElementById("container");
-
-
- let fetchdata=async()=>{
+ let fetchdata=async(value)=>{
     try{
-      const api = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline`;
+      const api = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${value}`;
 
       let res= await fetch(api);
-     let data= await res.json();
+     var data= await res.json();
      var length =data.length;
+
+
+  
+       // this is for sort data
+       document.getElementById("select2").addEventListener("change",function(){
+        console.log(this.value);
+
+        if(this.value==`htl`){
+            var  Htl =data.sort((a,b)=>{
+                return b.price-a.price;
+            })
+            append(Htl);
+        }
+        else if(this.value==`lth`){
+            var  Lth =data.sort((a,b)=>{
+                return a.price-b.price;
+            })
+          append(Lth);
+        }
+        else if(this.value==`rating`){
+            var  rating =data.sort((a,b)=>{
+                return a.rating-b.rating;
+            })
+            append(rating);
+        }
+        else{
+            window.location.reload();
+        }
+       
+    
+    })
+ 
      document.getElementById("length").innerText=length;
 
+ 
      append(data)
      
      console.log(data)
@@ -28,8 +58,10 @@ document.getElementById("navbar").innerHTML=navbar();
      
  }
 
- fetchdata();
+ fetchdata(`maybelline`);//calling fetch
+ // append data
  function append(data){
+    container.innerHTML=null;
      data.forEach(function(el){
 
       let div=document.createElement("div");
@@ -62,6 +94,7 @@ document.getElementById("navbar").innerHTML=navbar();
 
       let price=document.createElement("p");
       price.innerText=`Rs. ${el.price}`;
+      price.style="margin-top:-15px;"
 
       let bot_div=document.createElement("div");
       bot_div.setAttribute("id","bot_div");
@@ -102,5 +135,16 @@ document.getElementById("navbar").innerHTML=navbar();
       container.append(demo);
      })  
  }
+// this is for filter data by brands
+ document.getElementById("select1").addEventListener("change",function(){
+   console.log(this.value)
+   if(this.value==`none`){
+       window.location.reload();
+   }
+   else
+   fetchdata(this.value);
+ })
+   
+
 
   
