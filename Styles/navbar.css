@@ -29,6 +29,7 @@
     background-color: black;
     color: white;
     padding: 8px;
+    font-weight: bold;
 }
 #navlogin{
 cursor: pointer;
