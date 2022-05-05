@@ -78,7 +78,7 @@ document.getElementById("navbar").innerHTML=navbar();
        shade.addEventListener("click",function(){
            alert("this is for add to cart")
        })
-
+  
        bot_div.append(heart,shade);
 
       div2.append(img,icon_div)
