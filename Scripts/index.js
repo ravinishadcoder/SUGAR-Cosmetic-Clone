@@ -38,15 +38,42 @@
     ]
 
     let hotDealsarr = [
-        {img_url :"https://d32baadbbpueqt.cloudfront.net/37f0de63-c052-447c-9f98-dacceede39e1.jpg",},
-        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/c3f4367f-0512-4adf-b162-a34f624ff76b.jpg",},
-        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/788deca3-af41-496e-8649-06a2830603b9.jpg",},
-        // {img_url :"",},
-        // {img_url :"",},
-        // {img_url :"",},
-        // {img_url :"",},
-        // {img_url :"",},
-        // {img_url :"",},
+        [
+            {img_url :"https://d32baadbbpueqt.cloudfront.net/37f0de63-c052-447c-9f98-dacceede39e1.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/c3f4367f-0512-4adf-b162-a34f624ff76b.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/788deca3-af41-496e-8649-06a2830603b9.jpg",},
+       
+        ],
+         [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ac294d17-5c03-4d38-9b9e-be329de0f58a.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f21188a3-aa66-4b1a-b52e-69bd9ee1f92c.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3098348f-c2bd-434f-b688-3432ae37d9ef.jpg",},
+         ],
+        [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1bbe5c65-f084-4c7e-ae6a-46b90867b04a.jpg",},
+            {img_url :"https://d32baadbbpueqt.cloudfront.net/37f0de63-c052-447c-9f98-dacceede39e1.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/c3f4367f-0512-4adf-b162-a34f624ff76b.jpg",},
+        ],
+        [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/788deca3-af41-496e-8649-06a2830603b9.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ac294d17-5c03-4d38-9b9e-be329de0f58a.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f21188a3-aa66-4b1a-b52e-69bd9ee1f92c.jpg",},
+        ],
+        [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3098348f-c2bd-434f-b688-3432ae37d9ef.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1bbe5c65-f084-4c7e-ae6a-46b90867b04a.jpg",},
+            {img_url :"https://d32baadbbpueqt.cloudfront.net/37f0de63-c052-447c-9f98-dacceede39e1.jpg",},
+        ],
+        [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/c3f4367f-0512-4adf-b162-a34f624ff76b.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/788deca3-af41-496e-8649-06a2830603b9.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ac294d17-5c03-4d38-9b9e-be329de0f58a.jpg",},
+        ],
+        [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f21188a3-aa66-4b1a-b52e-69bd9ee1f92c.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3098348f-c2bd-434f-b688-3432ae37d9ef.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1bbe5c65-f084-4c7e-ae6a-46b90867b04a.jpg",},
+        ],
         
     ]
 
@@ -186,9 +213,18 @@
     ]
     
     let topPicksArr = [
+       [
         {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/18ec06e5-4071-4a84-ba25-3e46632b6de0.jpg",},
         {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ce6539a6-6bff-4f41-8554-4af80d8ffd07.jpg",},
         {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/8a71a460-cd8f-4166-8ac5-b19407d23699.jpg",},
+  
+       ],
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/dd4d4e8a-b7e3-485e-8a8c-059f5ccab057.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/18ec06e5-4071-4a84-ba25-3e46632b6de0.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ce6539a6-6bff-4f41-8554-4af80d8ffd07.jpg",},
+ 
+       ],
     ]
 
     let giftSetsArr = [
@@ -509,11 +545,55 @@
     ]
 
     let exploreArr = [
-        {img_url :"https://d32baadbbpueqt.cloudfront.net/27067867-bbb1-4e59-95ef-0c6208529b66.jpg",},
-        {img_url :"https://d32baadbbpueqt.cloudfront.net/a02b802e-a45c-48bc-a9e6-c7e760d94a8b.jpg",},
-        {img_url :"https://d32baadbbpueqt.cloudfront.net/d9e9ae47-0d9d-41e7-b781-0f19c8e81e63.jpg",},
-        {img_url :"https://d32baadbbpueqt.cloudfront.net/d803e183-b7ec-45a1-bcb3-7ef015031d62.jpg",},
-     
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/887ac04a-d449-4793-b6ef-f7dfddf1a214.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3fd3b743-7482-48aa-b08c-e2945f4e55ee.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/44351c32-e291-4ef3-9b12-c8570d2d369e.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f521d4d5-bf2c-462c-8897-e7e375c6301f.jpg",},
+   
+       ],  
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/5a14d6cc-2414-4cc8-bf2b-11f881c756c6.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/8028cf4f-a5d5-4896-b4c6-5cae8da64b26.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/16951257-44d5-4b7e-81cb-55628f498d94.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/887ac04a-d449-4793-b6ef-f7dfddf1a214.jpg",},
+   
+       ],
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3fd3b743-7482-48aa-b08c-e2945f4e55ee.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/44351c32-e291-4ef3-9b12-c8570d2d369e.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f521d4d5-bf2c-462c-8897-e7e375c6301f.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/5a14d6cc-2414-4cc8-bf2b-11f881c756c6.jpg",},
+   
+       ],
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/8028cf4f-a5d5-4896-b4c6-5cae8da64b26.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/16951257-44d5-4b7e-81cb-55628f498d94.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/887ac04a-d449-4793-b6ef-f7dfddf1a214.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3fd3b743-7482-48aa-b08c-e2945f4e55ee.jpg",},
+   
+       ],
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/44351c32-e291-4ef3-9b12-c8570d2d369e.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f521d4d5-bf2c-462c-8897-e7e375c6301f.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/5a14d6cc-2414-4cc8-bf2b-11f881c756c6.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/8028cf4f-a5d5-4896-b4c6-5cae8da64b26.jpg",},
+   
+       ],
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/16951257-44d5-4b7e-81cb-55628f498d94.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/887ac04a-d449-4793-b6ef-f7dfddf1a214.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3fd3b743-7482-48aa-b08c-e2945f4e55ee.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/44351c32-e291-4ef3-9b12-c8570d2d369e.jpg",},
+   
+       ],
+       [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f521d4d5-bf2c-462c-8897-e7e375c6301f.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/5a14d6cc-2414-4cc8-bf2b-11f881c756c6.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/8028cf4f-a5d5-4896-b4c6-5cae8da64b26.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/16951257-44d5-4b7e-81cb-55628f498d94.jpg",},
+   
+       ],
     ]
     
 
@@ -540,6 +620,10 @@ container.innerText = ""
 start(top_slide_images_arr,top_slide_bar_div)
    
 start(middle_slide_bar_arr,middle_slide_bar_div)
+
+
+    var index_value = 1
+
 
 // document.querySelector(".lArrow").addEventListener("click",()=>{
 //     let val = localStorage.getItem("i")
@@ -619,8 +703,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
 
     let main_div = document.querySelector(".sixth_box_slide_div")
     let imageSlide =(arr,container)=>{
+        container.innerText = ""
         arr.forEach((el)=>{
-            
+           
             let img_div = document.createElement("img")
             img_div.className = "bannerimg"
             img_div.src = el.img_url
@@ -628,7 +713,31 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
         })
 
     }
-    imageSlide(hotDealsarr,main_div)
+    imageSlide(hotDealsarr[0],main_div)
+    let hdleft = 0
+   let hdright = 0
+    document.querySelector(".hdLarr").addEventListener("click",()=>{
+        
+        hdleft--
+        if(hdleft>=0){
+            hdright--
+            imageSlide(hotDealsarr[hdleft],main_div)           
+        }else{
+            hdleft++
+        }
+        
+    })
+
+    document.querySelector(".hdRarr").addEventListener("click",()=>{
+       hdright++
+       if(hdright<7){
+           hdleft++
+        imageSlide(hotDealsarr[hdright],main_div)
+       }else{
+           hdright--
+       }
+    })
+
 
     //  Sugar streaming part
 
@@ -732,7 +841,32 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
     // Top pics of the week part
 
     let topPicksdiv = document.querySelector(".tenth_box_slide_div")
-    imageSlide(topPicksArr,topPicksdiv)
+    imageSlide(topPicksArr[0],topPicksdiv)
+    let tpleft = 0
+    let tpright = 0
+     document.querySelector(".tpLarr").addEventListener("click",()=>{
+         
+         tpleft--
+         if(tpleft>=0){
+             tpright--
+             imageSlide(topPicksArr[tpleft],topPicksdiv)           
+         }else{
+             tpleft++
+         }
+         
+     })
+ 
+     document.querySelector(".tpRarr").addEventListener("click",()=>{
+        tpright++
+        if(tpright<2){
+            tpleft++
+         imageSlide(topPicksArr[tpright],topPicksdiv)
+        }else{
+            tpright--
+        }
+     })
+ 
+
 
 
     //  Gift sets part
@@ -837,6 +971,28 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
     //   Explore part
 
     let exploreDiv = document.querySelector(".sixteenth_box_div")
-    imageSlide(exploreArr,exploreDiv)
-
+    imageSlide(exploreArr[0],exploreDiv)
+    let exleft = 0
+    let exright = 0
+     document.querySelector(".exLarr").addEventListener("click",()=>{
+         
+         exleft--
+         if(exleft>=0){
+             exright--
+             imageSlide(exploreArr[exleft],exploreDiv)           
+         }else{
+             exleft++
+         }
+         
+     })
+ 
+     document.querySelector(".exRarr").addEventListener("click",()=>{
+        exright++
+        if(exright<7){
+            exleft++
+         imageSlide(exploreArr[exright],exploreDiv)
+        }else{
+            exright--
+        }
+     })
 

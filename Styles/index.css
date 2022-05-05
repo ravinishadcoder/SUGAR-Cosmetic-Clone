@@ -2,7 +2,7 @@
     width: 100%;
     height: 302px;
     margin: auto;
-
+    
 }
 .content:hover .abs{
     visibility: visible;
@@ -12,14 +12,14 @@
     position: relative;
 }
 .abs{
-   background-color: #3d3b3b;
+   background-color: #684939;
     position: absolute;
    top: 50%;
    transform: translateY(-50%);
    height: 30px;
    width: 30px;
    cursor: pointer;
-   border: 0;
+   border-color: transparent;
    visibility: hidden;
     
 }
@@ -177,12 +177,55 @@
 
 
 
+.sixth_box:hover .abs{
+    visibility: visible; 
+}
+.tenth_box:hover .abs{
+    visibility: visible; 
+}
+.sixteenth_box:hover .abs{
+    visibility: visible; 
+}
+.eighth_box:hover .abs{
+    visibility: visible; 
+}
+.hd,.ex{
+    top: 65%;
+}
+.tp,.sug{
+    top: 60%;
+}
+.suabs{
+    background-color: white;
+     position: absolute;
+    
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    border-color: transparent;
+    visibility: hidden;
+     
+ }
+ .suabs span{
+    font-size: 18px;
+    color: black;
+    line-height: 40px;
+    
+}
+.suabs:hover{
+    background-color: rgba(0, 0, 0, 0.8);
 
+}
+
+.sixth_box,.tenth_box,.sixteenth_box,.eighth_box{
+    position: relative;
+}
 
 .sixth_box_slide_div{
     display: flex;
     margin: auto;
-   
+   cursor: pointer;
 }
 
 .seventh_box > img{
@@ -194,6 +237,7 @@
 .eighth_box_video_div,.tenth_box_slide_div,.twelth_box_div,.fourteenth_box_div,.sixteenth_box_div{
     display: flex;
     margin: auto;
+    cursor: pointer;
 }
 .bannerimg{
     width: 390px;
