@@ -35,9 +35,9 @@ let navbar = ()=>{
       <div class="navdropdwn">
         <p class="navdropbtn">MAKEUP</p>
         <div class="dropdwn-content">
-          <a href="">Lips</a>
-          <a href="">Face</a>
-          <a href="">Eyes</a>
+          <a href="../HTML/lips.html">Lips</a>
+          <a href="../HTML/face.html">Face</a>
+          <a href="../HTML/eye.html">Eyes</a>
         </div>
       </div>
       <div class="navdropdwn">
@@ -70,7 +70,7 @@ let navbar = ()=>{
         <p class="navdropbtn">BLOG</p>
         <div class="dropdwn-content">
           <a href="">FEATURED</a>
-          <a href="">MAKEUP</a>
+          <a href="../HTML/makeup.html">MAKEUP</a>
           <a href="">SKINCARE</a>
         </div>
       </div>
