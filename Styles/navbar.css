@@ -14,13 +14,17 @@
 }
 #search {
     border: none;
+
   width: 400px;
+
+  width: 82%; 
+
   height: 85%;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
   background-color: dark white;
 }
-#nav_btn{
+#nav_btn{ 
    cursor: pointer;
     width: 200%;
     height: 85%;
@@ -29,6 +33,7 @@
     background-color: black;
     color: white;
     padding: 8px;
+    font-weight: bold;
 }
 #navlogin{
 cursor: pointer;

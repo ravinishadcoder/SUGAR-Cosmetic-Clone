@@ -221,7 +221,7 @@ let fotter = ()=>{
       <p>1800-209-9933</p>
       <p>Monday to Friday : 9 AM to 7 PM</p>
     </div>
-    <div>
+    <div> 
       <p>Support</p>
       <p>hello@sugarcosmetics.com</p>
     </div>
