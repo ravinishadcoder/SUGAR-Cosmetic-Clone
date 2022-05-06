@@ -235,3 +235,10 @@ var cartArray= JSON.parse(localStorage.getItem("cartItem")) || [];
 
     localStorage.setItem("wishlistItem",JSON.stringify(cartwish))
  }
+
+
+
+
+
+
+
