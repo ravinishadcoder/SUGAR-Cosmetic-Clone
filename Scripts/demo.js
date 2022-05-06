@@ -51,3 +51,25 @@ varifyotp.addEventListener("click",()=>{
        window.location.href = "Demo.html"
    }
 })
+
+
+// search functionallity
+
+let search = document.getElementById("nav_btn");
+search.addEventListener("click",()=>{
+    let searchData = document.getElementById("search").value;
+    console.log(searchData)
+    if(searchData=="skincare"){
+        window.location.href = "skincare.html"
+    }
+    if(searchData=="brush"){
+        window.location.href = "Brush.html"
+    }
+    if(searchData=="eyebrush"){
+        window.location.href = "eyebrush.html"
+    }
+    if(searchData=="facebrush"){
+        window.location.href = "facebrush.html"
+    }
+
+})
