@@ -1,20 +1,32 @@
 import {navbar,fotter} from "../Components/navbar.js";
+let countTrendingItem = 0;
 document.getElementById("navbar").innerHTML = navbar();
 document.getElementById("footer").innerHTML = fotter();
+let itemCountTrending = document.querySelector('.item-count');
+itemCountTrending.innerText = `${countTrendingItem} items`
 const url = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=smashbox';
 
-
+let ratingArray = [];
 const appendData = (data) => {
+    countTrendingItem = data.length
+    itemCountTrending.innerText = `${countTrendingItem} items`
     let containerContent = document.getElementById("container-content");
     containerContent.innerHTML = null;
-    data.forEach(({image_link,name,price}) => {
+    data.forEach(({image_link,name,price},index) => {
+        let rx = (Math.random()*3)+2;
+        let ry = Math.floor(Math.random()*270)+71;
+        let rz = Math.floor(Math.random()*70)+15;
+        ratingArray.push([rx.toFixed(1),ry,rz]);
         let div = document.createElement('div');
         div.setAttribute('class', 'trending-card');
+        div.addEventListener('click', ()=> {
+            setDataToLocal({image_link,name,price},index);
+        })
         let div_img_top_num = document.createElement('div');
         div_img_top_num.setAttribute('class', 'img-top-num');
         let div_img_top_img = document.createElement('img');
         div_img_top_img.src = 'https://in.sugarcosmetics.com/ic_multiple_shades_opt2.png';
-        div_img_top_num.append('29 ',div_img_top_img);
+        div_img_top_num.append(`${rz} `,div_img_top_img);
         let imgDiv = document.createElement('div');
         imgDiv.setAttribute('class', 'imgDiv');
         let imgDivimg = document.createElement('img');
@@ -34,13 +46,14 @@ const appendData = (data) => {
         ratingDiv.setAttribute('class', 'trending-rating');
         let ratingimg = document.createElement('img');
         ratingimg.src = 'https://in.sugarcosmetics.com/star_filled.png';
-        ratingDiv.append(ratingimg,' 4.8(184)');
+        ratingDiv.append(ratingimg,`${ratingArray[ratingArray.length-1][0]} (${ratingArray[ratingArray.length-1][1]})`);
         let fevOuterDiv = document.createElement('div');
         fevOuterDiv.setAttribute('class','trending-fev-card');
         fevOuterDiv.innerHTML = `<div class="trending-fev-sign"><i class="fa fa-heart-o" aria-hidden="true"></i></div><div class="select-shade-text">SELECT SHADE</div>`;
         div.append(div_img_top_num,imgDiv,textDiv,priceDiv,ratingDiv,fevOuterDiv)
         containerContent.append(div);
     });
+    console.log(ratingArray);
 }
 
 const fetchData = async () => {
@@ -50,5 +63,14 @@ const fetchData = async () => {
     appendData(data);
 }
 fetchData();
+
+const setDataToLocal = (data,index) => {
+    let obj = {
+        data:data,
+        rating: ratingArray[index],
+        index:index
+    }
+    localStorage.setItem('productData', JSON.stringify(obj));
+}
 
 
