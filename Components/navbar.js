@@ -49,7 +49,7 @@ let navbar = ()=>{
       <div id="signappend"></div>
       <div id="navlogin">
         <p>
-          <span><i class="fa-solid fa-user"></i></span>Login/Register
+          <span><i class="fa-solid fa-user"></i></span><div id="changename">Login/Register</div>
         </p>
       </div>
       <div id="navcart">

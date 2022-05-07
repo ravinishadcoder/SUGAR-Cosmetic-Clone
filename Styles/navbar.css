@@ -158,3 +158,8 @@ cursor: pointer;
       margin-left: -9px;
       position: relative;
   }
+
+  #navlogin{
+    display: flex;
+    align-items: center;
+  }

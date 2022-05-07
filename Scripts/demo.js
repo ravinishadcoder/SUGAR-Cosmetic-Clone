@@ -48,12 +48,25 @@ varifyotp.addEventListener("click",()=>{
        
    }
    else{
-       alert("Login Succesfull")
+      
        document.getElementById("loginbox").innerHTML=info;
-    //    window.location.href = "Demo.html"
+       userName();
    }
 })
 
+function userName(){
+    let savebtn = document.getElementById("savebtn");
+    savebtn.addEventListener("click",()=>{
+    let username = document.getElementById("username").value;
+    let lastname = document.getElementById("userlastname").value;
+    let changename = document.getElementById("changename");
+    changename.innerText = "Hi,"+username+" "+lastname+" " ;
+    let changebox = document.getElementById("navlogin");
+    changebox.style.backgroundColor = "lightgrey";
+    changebox.style.height = "30px";
+    changebox.style.padding = "5px";
+   })  
+}
 
 // search functionallity
 
