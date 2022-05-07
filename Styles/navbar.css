@@ -149,3 +149,12 @@ cursor: pointer;
   .picks{
     color: red;
   }
+
+  #counter{
+    border: 1px solid grey;
+      height: 18px;
+      width: 15px;
+      border-radius: 50%;
+      margin-left: -9px;
+      position: relative;
+  }

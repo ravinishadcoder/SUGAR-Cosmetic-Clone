@@ -61,4 +61,45 @@ let signinpage = ()=>{
 }
 
 
-export {signinpage}
+
+let infopage = ()=>{
+  return `<div class="boxtop">
+  <img
+    src="https://in.sugarcosmetics.com/smartphone.svg"
+    alt=""
+    height="30px"
+    width="30px"
+    class="logmob"
+  />
+  <p class="loginsign">WELCOME !</p>
+</div>
+<p class="detail">Phone Number Verified - +91 8080034532 (Try another number)</p>
+<div id="fbicon">
+    <div>
+        <img src="https://in.sugarcosmetics.com/desc-images/facebook_login.svg" width="148px" height="40px">
+    </div>
+    <p>Or</p>
+    <div>
+        <img src="https://in.sugarcosmetics.com/desc-images/google.png" width="158px" height="40px">
+    </div>
+</div>
+<div class="infohrline"></div>
+<p class="detail">Or Enter Account Details</p>
+<div id="infoinput">
+    <div class="infoname">
+        <input type="text" placeholder="Name">
+    </div>
+    <div class="infoname">
+        <input type="text" placeholder="Last-Name">
+    </div>
+</div>
+<div id="infoemail">
+    <input type="email" placeholder="Email Address">
+</div>
+<div id="savebtn">Save and Continue</div>
+</div>`
+}
+
+
+
+export {signinpage,infopage}

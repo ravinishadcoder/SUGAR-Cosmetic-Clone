@@ -54,7 +54,7 @@ let navbar = ()=>{
       </div>
       <div id="navcart">
         <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-bag-shopping"></i>
+        <i class="fa-solid fa-bag-shopping"></i><span><div id="counter"></div></span>
         <img
           src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg"
           alt=""
