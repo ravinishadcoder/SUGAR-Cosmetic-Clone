@@ -1,0 +1,20 @@
+#offerhead{
+    justify-content: center;
+    align-items: center;
+   
+    height: 70px;
+    display: flex;
+    font-size: 2rem!important;
+    background-color: #f5f5f5;
+} 
+#offercontent{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2%;
+    justify-items: center;
+    padding: 25px;
+}
+#offercontent img{
+   
+   border-radius: 10px;
+}

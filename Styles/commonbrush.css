@@ -1,7 +1,5 @@
 
-* {
-    box-sizing: border-box;
-}
+
 
 body {
     background-color: #f5f5f5;
@@ -93,4 +91,15 @@ body{
 
 body img,button,i:hover{
     cursor: pointer;
+}
+#home_btn{
+    display: flex;
+    margin-left: 82px;
+    font-size: 18px;
+    
+}
+
+#home{
+    margin-right: 10px;
+  
 }

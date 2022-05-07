@@ -15,7 +15,7 @@
 #search {
     border: none;
 
-  width: 400px;
+  width: 480px;
 
  
 
@@ -101,6 +101,7 @@ cursor: pointer;
   margin-right: -54%;
   margin-top: -25px;
   animation: right 2s;
+  z-index: 1;
 }
 
 @keyframes right{
@@ -162,4 +163,9 @@ cursor: pointer;
   #navlogin{
     display: flex;
     align-items: center;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
   }
