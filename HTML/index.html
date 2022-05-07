@@ -6,23 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buy Beauty Products at SUGAR Cosmetics Online Store</title>
     <script src="https://kit.fontawesome.com/4dbaa63c16.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Styles/index.css">
-    <link  rel="stylesheet"  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="../Styles/navbar.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
 </head>
 <body>
-    <div id="navbar"></div>
+    <div class="navbar"></div>
     <div class="middle_part">
         <div class="content">
-            <div class="top_slide_bar_div slide"></div>
+            <div class="top_slide_bar_div">
+                <div class="sliding_window"></div>
+            </div>
             <div  class="lArrow abs">
                 <span class="fa-solid fa-chevron-left "></span>
             </div>
             <div  class="rArrow abs">
                 <span class="fa-solid fa-chevron-right "></span>
-            </div>
+            </div>      
         </div>
-        
         <div class="slide_bar_dots_div"></div>
+        
         <div class="second_box">
             <h2>REFER YOUR FRIENDS</h2>
             <div class="second_box_img"><img src="https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/f53f2d67-ea43-4959-abca-eba6d87fd598.jpg" alt=""></div>
@@ -51,11 +57,23 @@
         </div>
         <div class="fifth_box">
             <h2>QUICK BEAUTY TIPS WITH SUGAR</h2>
-            <div class="middle_slide_bar_div"></div>
+            <div class="content">
+                <div class="middle_slide_bar_div">
+                    <div class="sliding_window middle_s_w"></div>
+                </div>
+                <div  class="lArrow abs qbLArr">
+                    <span class="fa-solid fa-chevron-left "></span>
+                </div>
+                <div  class="rArrow abs qbRArr">
+                    <span class="fa-solid fa-chevron-right "></span>
+                </div>      
+            </div>      
         </div>
         <div class="sixth_box">
             <h2>HOT DEALS</h2>
-            <div class="sixth_box_slide_div"></div>
+            <div class="sixth_box_slide_div">
+                <div class="slider"></div>
+            </div>
             <div  class="lArrow abs hd hdLarr">
                 <span class="fa-solid fa-chevron-left "></span>
             </div>
@@ -69,12 +87,16 @@
         </div>
         <div class="eighth_box">
             <h2>SUGAR STREAMING</h2>
-            <div class="eighth_box_video_div"></div>
-            <div  class="lArrow suabs sug">
-                <span class="fa-solid fa-chevron-left "></span>
+            <div  class="eighth_box_video_div">
+                <div class=" vidSlider"></div>
             </div>
-            <div  class="rArrow suabs sug">
-                <span class="fa-solid fa-chevron-right "></span>
+            <div class="controls">
+                <div class="common" >
+                    <img id="left" class="Lcont " src="https://asset.fwcdn3.com/js/ca7ce768af62a2894af12f1909a7c494.png" alt="">
+                </div>
+                <div class="common">
+                    <img id="right" class="Rcont " src="https://asset.fwcdn3.com/js/2756875147bf6e7de183f725c308c631.png" alt="">
+                </div>
             </div>
         </div>
         <div class="ninth_box">
@@ -87,7 +109,9 @@
         </div>
         <div class="tenth_box">
             <h2>TOP PICKS OF THE WEEK</h2>
-            <div class="tenth_box_slide_div"></div>
+            <div class="tenth_box_slide_div">
+                <div class="slider tpSlider"></div>
+            </div>
             <div  class="lArrow abs tp tpLarr">
                 <span class="fa-solid fa-chevron-left "></span>
             </div>
@@ -129,7 +153,9 @@
         </div>
         <div class="sixteenth_box">
             <h2>EXPLORE</h2>
-            <div class="sixteenth_box_div"></div>
+            <div class="sixteenth_box_div">
+                <div class="slider exSlider"></div>
+            </div>
             <div  class="lArrow abs ex exLarr">
                 <span class="fa-solid fa-chevron-left "></span>
             </div>
@@ -139,7 +165,7 @@
         </div>
         <div class="read_more">READ MORE ABOUT SUGAR COSMETICS</div>
     </div>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <div class="footer"></div>
 </body>
 </html>
 <script type="module" src="../Scripts/index.js"></script>

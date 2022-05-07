@@ -1,6 +1,8 @@
-
-    let top_slide_bar_div = document.querySelector(".top_slide_bar_div")
-    let middle_slide_bar_div = document.querySelector(".middle_slide_bar_div")
+import {navbar,fotter} from "../Components/navbar.js"
+document.querySelector(".navbar").innerHTML = navbar();
+document.querySelector(".footer").innerHTML = fotter();
+    
+    let middle_slide_bar_div = document.querySelector(".middle_s_w")
 
     let top_slide_images_arr = [
 
@@ -78,7 +80,7 @@
     ]
 
     let videoPlayArr = [
-        {src: "https://cdn4.fireworktv.com/medias/2022/4/22/1650623566-berqzfil/watermarked/540/MettlePrimingBalm-Vertical.mp4",},
+       
         {src: "https://cdn4.fireworktv.com/medias/2022/3/9/1646836045-uerkdvpa/watermarked/540/InShot_20220309_1844460631.mp4",},
         {src: "https://cdn4.fireworktv.com/medias/2022/2/15/1644919919-drjtghip/watermarked/540/EasyEyelinerHackusingaSpoon.mp4",},
         {src: "https://cdn4.fireworktv.com/medias/2022/1/18/1642490662-qrlyukpb/watermarked/540/HowtoBaketheRightWay.mp4",},
@@ -95,7 +97,7 @@
         {src: "https://cdn4.fireworktv.com/medias/2022/3/9/1646836196-scobeuaq/watermarked/540/Flawlessrecreationoftheiconicdiva.mp4",},
         {src: "https://cdn4.fireworktv.com/medias/2022/3/9/1646836728-bkvwtnrc/watermarked/540/InShot_20220309_183351048.mp4",},
         {src: "https://cdn4.fireworktv.com/medias/2022/3/9/1646836997-qhfletip/watermarked/540/GlamSmokeyEyelook.mp4",},
-       
+        {src: "https://cdn4.fireworktv.com/medias/2022/4/22/1650623566-berqzfil/watermarked/540/MettlePrimingBalm-Vertical.mp4",},
     
     ]
 
@@ -225,6 +227,12 @@
         {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ce6539a6-6bff-4f41-8554-4af80d8ffd07.jpg",},
  
        ],
+        [
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/ce6539a6-6bff-4f41-8554-4af80d8ffd07.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/8a71a460-cd8f-4166-8ac5-b19407d23699.jpg",},
+        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/dd4d4e8a-b7e3-485e-8a8c-059f5ccab057.jpg",},
+ 
+       ],
     ]
 
     let giftSetsArr = [
@@ -303,8 +311,10 @@
     ]
 
     let thisorthatarr = [
+       [
         {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/2dfd09b7-d15c-4d7d-a2e3-fc2c2a7cbc0d.jpg",},
         {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1edc12f3-1ea2-46c3-a54e-57890e6a3bf9.png",},
+       ]
     ]
 
     let justInArr = [
@@ -455,9 +465,11 @@
     ]
 
     let sugarbeautyArr = [
-        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3d719924-5511-4ebb-b31f-dc3fabbe4cb1.jpg",},
-        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/4570aaa9-52a7-4082-8d59-d2c1d298cdc8.jpg",},
-        {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/6095fb33-4d09-4a55-8ceb-395a0818420c.jpg",},
+        [
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/3d719924-5511-4ebb-b31f-dc3fabbe4cb1.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/4570aaa9-52a7-4082-8d59-d2c1d298cdc8.jpg",},
+            {img_url :"https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/6095fb33-4d09-4a55-8ceb-395a0818420c.jpg",}, 
+        ]
     ]
 
     let skincareBasicsArr = [
@@ -598,38 +610,105 @@
     
 
     // Sliding images part
-let start = (arr,container)=>{
-container.innerText = ""
-    let id;
-    let slide_img = document.createElement("img")
-    
-    slide_img.className = "slide_img"
-    let i = 0
- 
-    id = setInterval(()=>{
-        if(i== arr.length){
-            i=0;
+    let top_slide_bar_div = document.querySelector(".sliding_window")
+    let isPaused = false;
+    let topTemp  = 0
+    let start = (arr,container)=>{
+        container.innerText = ""
+
+        for(let i=0; i<arr.length; i++){
+            let img = document.createElement("img")
+            img.className = "top_img"
+            img.src = arr[i].url
+            container.append(img)
         }
-        slide_img.src = arr[i].url
-        container.append(slide_img)
-        i++
-        localStorage.setItem("i",i)
-    },3000)
- 
- }
-start(top_slide_images_arr,top_slide_bar_div)
+       
+    } 
+    start(top_slide_images_arr,top_slide_bar_div)
+    setInterval(()=>{
+        let winWidth = window.outerWidth
+        
+        if(!isPaused){
+            topTemp = topTemp + winWidth
+            
+            if(topTemp<winWidth*(top_slide_images_arr.length)){
+                top_slide_bar_div.style.transform = `translateX(${-topTemp}px)`
+                top_slide_bar_div.style.transition = ".4s"
+            }else{
+                top_slide_bar_div.style.transform = `translateX(${-0}px)`
+                top_slide_bar_div.style.transition = "0.2s"
+                topTemp = 0
+            }             
+         }
+        },3000)
    
-start(middle_slide_bar_arr,middle_slide_bar_div)
+        
+            top_slide_bar_div.addEventListener("mouseover",()=>{
+                pause()
+            })
+            top_slide_bar_div.addEventListener("mouseout",()=>{
+                play()
+            })
+            document.querySelector(".lArrow").addEventListener("mouseover",()=>{
+                pause()
+               
+            })
+            document.querySelector(".rArrow").addEventListener("mouseover",()=>{
+                pause()
+               
+            })
+            document.querySelector(".lArrow").addEventListener("mouseout",()=>{
+                play()
+            })
+            document.querySelector(".rArrow").addEventListener("mouseout",()=>{
+                play()
+            })
+    
 
-
-    var index_value = 1
-
-
-// document.querySelector(".lArrow").addEventListener("click",()=>{
-//     let val = localStorage.getItem("i")
-//     console.log(val);
-//     start(top_slide_images_arr,top_slide_bar_div,val--)
-// })
+    let play = ()=>{
+        isPaused = false
+        ispaused = false
+    }
+    let pause = ()=>{
+        isPaused = true
+        ispaused = true
+    }
+        
+        document.querySelector(".lArrow").addEventListener("click",()=>{
+        
+            let winWidth = window.outerWidth
+            topTemp = topTemp - winWidth
+            let final = winWidth*(top_slide_images_arr.length-1)
+           if(topTemp>=0){
+            console.group("left",topTemp)
+            top_slide_bar_div.style.transform = `translateX(${-topTemp}px)`
+            top_slide_bar_div.style.transition = ".4s"
+           } else{
+            top_slide_bar_div.style.transform = `translateX(${-final}px)`
+            top_slide_bar_div.style.transition = "0.2s"
+            topTemp = final
+           } 
+          
+            
+        })
+    
+        document.querySelector(".rArrow").addEventListener("click",()=>{
+            let winWidth = window.outerWidth
+           
+            topTemp = topTemp + winWidth
+            
+            if(topTemp<winWidth*(top_slide_images_arr.length)){
+                top_slide_bar_div.style.transform = `translateX(${-topTemp}px)`
+                top_slide_bar_div.style.transition = ".4s"
+            }else{
+                top_slide_bar_div.style.transform = `translateX(${-0}px)`
+                top_slide_bar_div.style.transition = "0.2s"
+                topTemp = 0
+            }
+            
+        })
+   
+        
 
 //    Best sellers part
 
@@ -698,64 +777,205 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
     })
 
 
+// quick beauty tips
+let midTemp = 0
+let ispaused = false
+start(middle_slide_bar_arr,middle_slide_bar_div)
+setInterval(()=>{
+    let winWidth = window.outerWidth
+    
+    if(!ispaused){
+        midTemp = midTemp + winWidth
+        
+        if(midTemp<winWidth*(middle_slide_bar_arr.length)){
+            middle_slide_bar_div.style.transform = `translateX(${-midTemp}px)`
+            middle_slide_bar_div.style.transition = ".4s"
+        }else{
+            middle_slide_bar_div.style.transform = `translateX(${-0}px)`
+            middle_slide_bar_div.style.transition = "0.2s"
+            midTemp = 0
+        }             
+     }
+    },3000)
+
+    middle_slide_bar_div.addEventListener("mouseover",()=>{
+        pause()
+    })
+    middle_slide_bar_div.addEventListener("mouseout",()=>{
+        play()
+    })
+    document.querySelector(".lArrow").addEventListener("mouseover",()=>{
+        pause()
+        
+    })
+    document.querySelector(".rArrow").addEventListener("mouseover",()=>{
+        pause()
+        
+    })
+    document.querySelector(".lArrow").addEventListener("mouseout",()=>{
+        play()
+    })
+    document.querySelector(".rArrow").addEventListener("mouseout",()=>{
+        play()
+    })
+
+
+
+
+document.querySelector(".qbLArr").addEventListener("click",()=>{
+    pause()
+    let winWidth = window.outerWidth
+    midTemp = midTemp - winWidth
+    let final = winWidth*(middle_slide_bar_arr.length-1)
+    if(midTemp>=0){
+    console.group("left",midTemp)
+    middle_slide_bar_div.style.transform = `translateX(${-midTemp}px)`
+    middle_slide_bar_div.style.transition = ".4s"
+    } else{
+    middle_slide_bar_div.style.transform = `translateX(${-final}px)`
+    middle_slide_bar_div.style.transition = "0.2s"
+    midTemp = final
+} 
+
+
+})
+
+document.querySelector(".qbRArr").addEventListener("click",()=>{
+let winWidth = window.outerWidth
+
+    midTemp = midTemp + winWidth
+    pause()
+    if(midTemp<winWidth*(middle_slide_bar_arr.length)){
+        middle_slide_bar_div.style.transform = `translateX(${-midTemp}px)`
+        middle_slide_bar_div.style.transition = ".4s"
+    }else{
+        middle_slide_bar_div.style.transform = `translateX(${-0}px)`
+        middle_slide_bar_div.style.transition = "0.2s"
+        midTemp = 0
+    }
+
+})
+
+
+
+
 
     // Hot deals part
 
-    let main_div = document.querySelector(".sixth_box_slide_div")
+   
+    let main_div = document.querySelector(".slider")
     let imageSlide =(arr,container)=>{
         container.innerText = ""
-        arr.forEach((el)=>{
-           
-            let img_div = document.createElement("img")
-            img_div.className = "bannerimg"
-            img_div.src = el.img_url
-            container.append(img_div)
-        })
+       for(let i=0; i<arr.length; i++){
+        //    console.log(arr)
+        arr[i].map((el)=>{
+            let sliding_div = document.createElement("div")
+            sliding_div.className = "sliding_div"
+             let img_div = document.createElement("img")
+             img_div.className = "bannerimg"
+             img_div.src = el.img_url
+             sliding_div.append(img_div)
+             container.append(sliding_div)
+         })
+       }
 
     }
-    imageSlide(hotDealsarr[0],main_div)
-    let hdleft = 0
-   let hdright = 0
+    imageSlide(hotDealsarr,main_div)
+    let hdSlide = document.querySelector(".slider")
+    let temp = 0
     document.querySelector(".hdLarr").addEventListener("click",()=>{
         
-        hdleft--
-        if(hdleft>=0){
-            hdright--
-            imageSlide(hotDealsarr[hdleft],main_div)           
-        }else{
-            hdleft++
-        }
+        let winWidth = window.outerWidth
+        temp = temp - winWidth
+        let final = winWidth*(hotDealsarr.length-1)
+       if(temp>=0){
+        console.group("left",temp)
+        hdSlide.style.transform = `translateX(${-temp}px)`
+        hdSlide.style.transition = ".4s"
+       } else{
+        hdSlide.style.transform = `translateX(${-final}px)`
+        hdSlide.style.transition = "0.2s"
+        temp = final
+       } 
         
     })
 
     document.querySelector(".hdRarr").addEventListener("click",()=>{
-       hdright++
-       if(hdright<7){
-           hdleft++
-        imageSlide(hotDealsarr[hdright],main_div)
-       }else{
-           hdright--
-       }
+        let winWidth = window.outerWidth
+        
+        temp = temp + winWidth
+        console.group("right",temp)
+        if(temp<winWidth*(hotDealsarr.length)){
+            hdSlide.style.transform = `translateX(${-temp}px)`
+            hdSlide.style.transition = ".4s"
+        }else{
+            hdSlide.style.transform = `translateX(${-0}px)`
+            hdSlide.style.transition = "0.2s"
+            temp = 0
+            // window.location.reload()
+        }
     })
 
 
     //  Sugar streaming part
 
+    
+let vid_div = document.querySelector(".vidSlider")
     let videoPlay = (data)=>{
         data.forEach((el)=>{
-            let main_div = document.querySelector(".eighth_box_video_div")
-            let iframe_div = document.createElement("div")
-            iframe_div.className = "iframe_div"
-           let iframe = document.createElement("iframe")
-           iframe.src = el.src
-           iframe.style.border = "0"
-           iframe.className = "iframeshorts"
-            // console.log(iframe)
-            main_div.append(iframe)
+           
+            let video_div = document.createElement("div")
+            video_div.className = "video_div"
+           let video = document.createElement("video")
+           video.src = el.src
+           video.style.border = "0"          
+           video.className = "videoshorts"
+           video.style.cursor = "pointer"
+            // console.log(video)
+            vid_div.append(video)
+            
         })
+       
     }
     videoPlay(videoPlayArr)
-
+    const clip = document.querySelectorAll(".videoshorts")
+        for(let i=0; i<clip.length; i++){
+            clip[i].addEventListener("mouseover",(e)=>{
+                clip[i].play()
+            })
+            clip[i].addEventListener("mouseout",(e)=>{
+                clip[i].pause()
+            })
+        } 
+        let vidTemp = 0
+        document.querySelector("#left").addEventListener("click",()=>{
+                    let winWidth = window.outerWidth
+                vidTemp = vidTemp - winWidth*0.92
+                let final = winWidth*4
+            if(vidTemp>0){
+                console.group("left",vidTemp)
+                vid_div.style.transform = `translateX(${-vidTemp}px)`
+                vid_div.style.transition = ".4s"
+            }else{
+                vid_div.style.transform = `translateX(${-0}px)`
+                vid_div.style.transition = ".4s"
+                vidTemp=0
+            } 
+        })
+        document.querySelector("#right").addEventListener("click",()=>{
+            let winWidth = window.outerWidth
+        
+            vidTemp = vidTemp + winWidth*0.92
+            console.group("right",vidTemp,winWidth)
+            if(vidTemp<winWidth*(3)){
+                vid_div.style.transform = `translateX(${-vidTemp}px)`
+                vid_div.style.transition = ".4s"
+            }else{
+                vidTemp = vidTemp - winWidth*0.92
+            }
+        })
+   
+   
 
     // Super savers part
 
@@ -822,7 +1042,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
             ssright--
             superSavers(superSaversarr[ssleft],superSaversdiv)           
         }else{
-            ssleft++
+            ssleft = 2
+            ssright = 2
+            superSavers(superSaversarr[2],superSaversdiv)
         }
         
     })
@@ -833,36 +1055,48 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
            ssleft++
         superSavers(superSaversarr[ssright],superSaversdiv)
        }else{
-           ssright--
+        ssleft = 0
+        ssright = 0
+        superSavers(superSaversarr[0],superSaversdiv)
        }
     })
 
 
     // Top pics of the week part
 
-    let topPicksdiv = document.querySelector(".tenth_box_slide_div")
-    imageSlide(topPicksArr[0],topPicksdiv)
-    let tpleft = 0
-    let tpright = 0
+    let topPicksdiv = document.querySelector(".tpSlider")
+    imageSlide(topPicksArr,topPicksdiv)
+    let tpTemp = 0
      document.querySelector(".tpLarr").addEventListener("click",()=>{
          
-         tpleft--
-         if(tpleft>=0){
-             tpright--
-             imageSlide(topPicksArr[tpleft],topPicksdiv)           
-         }else{
-             tpleft++
-         }
+        let winWidth = window.outerWidth
+        tpTemp = tpTemp - winWidth
+        let final = winWidth*(topPicksArr.length-1)
+       if(tpTemp>=0){
+        console.group("left",tpTemp)
+        topPicksdiv.style.transform = `translateX(${-tpTemp}px)`
+        topPicksdiv.style.transition = ".4s"
+       } else{
+        topPicksdiv.style.transform = `translateX(${-final}px)`
+        topPicksdiv.style.transition = "0.2s"
+        tpTemp = final
+       }
          
      })
  
      document.querySelector(".tpRarr").addEventListener("click",()=>{
-        tpright++
-        if(tpright<2){
-            tpleft++
-         imageSlide(topPicksArr[tpright],topPicksdiv)
+        let winWidth = window.outerWidth
+        
+        tpTemp = tpTemp + winWidth
+        console.group("right",tpTemp)
+        if(tpTemp<winWidth*(topPicksArr.length)){
+            topPicksdiv.style.transform = `translateX(${-tpTemp}px)`
+            topPicksdiv.style.transition = ".4s"
         }else{
-            tpright--
+            topPicksdiv.style.transform = `translateX(${-0}px)`
+            topPicksdiv.style.transition = "0.2s"
+            tpTemp = 0
+            // window.location.reload()
         }
      })
  
@@ -882,7 +1116,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
              gsright--
              superSavers(giftSetsArr[gsleft],giftSetsdiv)           
          }else{
-             gsleft++
+             gsleft = 1
+             gsright = 1
+             superSavers(giftSetsArr[1],giftSetsdiv)
          }
          
      })
@@ -893,7 +1129,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
             gsleft++
          superSavers(giftSetsArr[gsright],giftSetsdiv)
         }else{
-            gsright--
+            gsleft = 0
+             gsright = 0
+            superSavers(giftSetsArr[0],giftSetsdiv)
         }
      })
 
@@ -918,7 +1156,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
               jiright--
               superSavers(justInArr[jileft],justInDiv)           
           }else{
-              jileft++
+              jileft = 3
+              jiright = 3
+              superSavers(justInArr[3],justInDiv)
           }
           
       })
@@ -929,7 +1169,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
              jileft++
           superSavers(justInArr[jiright],justInDiv)
          }else{
-             jiright--
+            jileft = 0
+            jiright = 0
+             superSavers(justInArr[0],justInDiv)
          }
       })
 
@@ -952,7 +1194,9 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
               sbright--
               bestSeller(skincareBasicsArr[sbleft],skincareBasicDiv)           
           }else{
-              sbleft++
+              sbleft = 2
+              sbright = 2
+              bestSeller(skincareBasicsArr[2],skincareBasicDiv)
           }
           
       })
@@ -964,35 +1208,46 @@ start(middle_slide_bar_arr,middle_slide_bar_div)
              sbleft++
           bestSeller(skincareBasicsArr[sbright],skincareBasicDiv)
          }else{
-             sbright--
+            sbleft = 0
+            sbright = 0
+             bestSeller(skincareBasicsArr[0],skincareBasicDiv)
          }
       })
 
     //   Explore part
 
-    let exploreDiv = document.querySelector(".sixteenth_box_div")
-    imageSlide(exploreArr[0],exploreDiv)
-    let exleft = 0
-    let exright = 0
+    let exploreDiv = document.querySelector(".exSlider")
+    imageSlide(exploreArr,exploreDiv)
+    let exTemp = 0
      document.querySelector(".exLarr").addEventListener("click",()=>{
          
-         exleft--
-         if(exleft>=0){
-             exright--
-             imageSlide(exploreArr[exleft],exploreDiv)           
-         }else{
-             exleft++
-         }
+        let winWidth = window.outerWidth
+        exTemp = exTemp - winWidth
+        let final = winWidth*(exploreArr.length-1)
+       if(exTemp>=0){
+        console.group("left",exTemp)
+        exploreDiv.style.transform = `translateX(${-exTemp}px)`
+        exploreDiv.style.transition = ".4s"
+       } else{
+        exploreDiv.style.transform = `translateX(${-final}px)`
+        exploreDiv.style.transition = "0.2s"
+        exTemp = final
+       } 
          
      })
  
      document.querySelector(".exRarr").addEventListener("click",()=>{
-        exright++
-        if(exright<7){
-            exleft++
-         imageSlide(exploreArr[exright],exploreDiv)
+        let winWidth = window.outerWidth
+        exTemp = exTemp + winWidth
+        console.group("right",exTemp)
+        if(exTemp<winWidth*(exploreArr.length)){
+            exploreDiv.style.transform = `translateX(${-exTemp}px)`
+            exploreDiv.style.transition = ".4s"
         }else{
-            exright--
+            exploreDiv.style.transform = `translateX(${-0}px)`
+            exploreDiv.style.transition = "0.2s"
+            exTemp = 0
+            // window.location.reload()
         }
      })
 
