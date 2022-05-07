@@ -59,14 +59,20 @@ function userName(){
     savebtn.addEventListener("click",()=>{
     let username = document.getElementById("username").value;
     let lastname = document.getElementById("userlastname").value;
+    let obj = {username,lastname};
+    localStorage.setItem("userDetails",JSON.stringify(obj));
+    window.location.href = "index.html"
+    
+   })  
+}
+   let userInfo = JSON.parse(localStorage.getItem("userDetails"))
+    console.log(userInfo)
     let changename = document.getElementById("changename");
-    changename.innerText = "Hi,"+username+" "+lastname+" " ;
+    changename.innerText = "Hi,"+userInfo.username+" "+userInfo.lastname+" " ;
     let changebox = document.getElementById("navlogin");
     changebox.style.backgroundColor = "lightgrey";
     changebox.style.height = "30px";
     changebox.style.padding = "5px";
-   })  
-}
 
 // search functionallity
 

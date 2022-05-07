@@ -101,6 +101,7 @@ cursor: pointer;
   margin-right: -54%;
   margin-top: -25px;
   animation: right 2s;
+  z-index: 1;
 }
 
 @keyframes right{

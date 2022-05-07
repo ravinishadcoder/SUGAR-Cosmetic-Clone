@@ -93,7 +93,7 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn">TRENDING</p>
+        <p class="navdropbtn"><a href="../HTML/trending.html">Trending</a></p>
         <div class="dropdwn-content">
           <a href="">SUGAR MERCH STATION</a>
           <a href="">MAKEUP KITS</a>
