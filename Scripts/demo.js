@@ -2,8 +2,9 @@ import {navbar,fotter} from "../Components/navbar.js";
 
 document.getElementById("navbar").innerHTML = navbar()
 document.getElementById("footer").innerHTML = fotter()
-import {signinpage} from "../Components/signinpage.js"
+import {signinpage,infopage} from "../Components/signinpage.js"
 document.getElementById("signappend").innerHTML = signinpage();
+let info = infopage();
 
 let navlogin = document.getElementById("navlogin");
 
@@ -48,6 +49,29 @@ varifyotp.addEventListener("click",()=>{
    }
    else{
        alert("Login Succesfull")
-       window.location.href = "Demo.html"
+       document.getElementById("loginbox").innerHTML=info;
+    //    window.location.href = "Demo.html"
    }
+})
+
+
+// search functionallity
+
+let search = document.getElementById("nav_btn");
+search.addEventListener("click",()=>{
+    let searchData = document.getElementById("search").value;
+    console.log(searchData)
+    if(searchData=="skincare"){
+        window.location.href = "skincare.html"
+    }
+    if(searchData=="brush"){
+        window.location.href = "Brush.html"
+    }
+    if(searchData=="eyebrush"){
+        window.location.href = "eyebrush.html"
+    }
+    if(searchData=="facebrush"){
+        window.location.href = "facebrush.html"
+    }
+
 })

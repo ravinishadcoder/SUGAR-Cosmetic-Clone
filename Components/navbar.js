@@ -10,7 +10,40 @@ let navbar = ()=>{
         />
       </div>
       <div id="navsearch">
-        <input type="text" id="search" placeholder="Try Liquid Liptick" />
+      <div class="navdropdwn">
+            <input type="text" id="search" placeholder="Try Liquid Liptick" />
+            <div class="sdropcontent">
+              <div class="picks"><span> <i class="fa-solid fa-arrow-trend-up"></i></span>Frequently Searched</div>
+              <div id="twenty_hr">
+                <div>24-hr foundation</div>
+                <div>Wallets</div>
+                <div>Lipsticks</div>
+              </div>
+              <p class="picks"><span><i class="fa-solid fa-fire-flame-curved"></i></span> Hot Picks</p>
+              <div id="searchpics">
+                 <div>
+                     <img src="https://media.sugarcosmetics.com/upload/These-super-easy-hacks-will-fix-your-dried-mascara-cover.jpg" width="50px" height="50px">
+                     <p>Mascara</p>
+                 </div> 
+                 <div>
+                     <img src="https://media.sugarcosmetics.com/upload/Brow.jpg" width="50px" height="50px">
+                     <p>Brow</p>
+                 </div>
+                 <div>
+                     <img src="https://media.sugarcosmetics.com/upload/EBO-128x165-sheet-mask...jpg" width="50px" height="50px">
+                     <p>Face Mask</p>
+                 </div>
+                 <div>
+                     <img src="https://media.sugarcosmetics.com/upload/Gifting.jpg" width="50px" height="50px">
+                     <p>Gifting</p>
+                 </div>
+                 <div>
+                    <img src="https://media.sugarcosmetics.com/upload/CDF.jpg" width="50px" height="50px">
+                    <p>Bronzer</p>
+                 </div>
+              </div>
+            </div>
+          </div>
        <div><button id="nav_btn">Search</button></div> 
       </div>
       <div id="signappend"></div>
@@ -21,7 +54,7 @@ let navbar = ()=>{
       </div>
       <div id="navcart">
         <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-bag-shopping"></i>
+        <i class="fa-solid fa-bag-shopping"></i><span><div id="counter"></div></span>
         <img
           src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg"
           alt=""
