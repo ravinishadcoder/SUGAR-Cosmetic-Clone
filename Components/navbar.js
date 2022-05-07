@@ -66,7 +66,7 @@ let navbar = ()=>{
   <div id="navcat">
     <div id="maincat">
       <div class="navdropdwn">
-        <p class="navdropbtn">MAKEUP</p>
+        <p class="navdropbtn"> <a href="../HTML/makeup.html">MAKEUP</a></p>
         <div class="dropdwn-content">
           <a href="../HTML/lips.html">Lips</a>
           <a href="../HTML/face.html">Face</a>
