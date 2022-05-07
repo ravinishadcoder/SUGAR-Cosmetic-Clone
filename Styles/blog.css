@@ -61,12 +61,63 @@ border: 1px solid black;
 
 }
 .imgLeftCard{
+    width: 60%;
     overflow: hidden;
-
+    /* border: 1px solid black; */
+    display: flex;
 }
 .imgLeftCard img{
     object-fit: cover;
     /* width: 100%; */
     height: 100%;
     border-radius: 10px;
+}
+.titleHead_card{
+    margin-left: 10px;
+    margin-top: 20px;
+    font-family: myFirstFont;
+    color: #575555;
+    font-size: 12px;
+    margin:0;
+    margin-left: 10px;
+}
+.card_head_title{
+    margin-top: 20px;
+
+}
+.card_head_content{
+    margin-top: 8px;
+}
+.controlRigthCard{
+    width: 40%;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* font-size: 13px; */
+}
+.controlDeletCart{
+    cursor: pointer;
+    font-size: 14px;
+    color: #6c5656;
+}
+.controlPlusMinusCart{
+    display: flex;
+}
+.controlMinus,.controlPlus{
+    margin:0 10px;
+    height: 20px;
+    width: 20px;
+    background-color: black;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+}
+.controlAmountCart,.controlValue{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* color: #868686; */
 }
