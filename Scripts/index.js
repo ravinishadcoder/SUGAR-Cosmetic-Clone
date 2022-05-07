@@ -708,9 +708,7 @@ document.querySelector(".footer").innerHTML = fotter();
             
         })
    
-
-
-
+        
 
 //    Best sellers part
 
