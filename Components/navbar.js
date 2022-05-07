@@ -4,10 +4,11 @@ let navbar = ()=>{
     return `<div id="temp">
     <div id="navmain">
       <div id="navlogo">
-        <img
-          src="https://in.sugarcosmetics.com/desc-images/SUGARLogo1.png"
-          alt=""
-        />
+      <a href="../HTML/index.html"><img
+      src="https://in.sugarcosmetics.com/desc-images/SUGARLogo1.png"
+      alt=""
+    /></a>
+        
       </div>
       <div id="navsearch">
       <div class="navdropdwn">
@@ -74,10 +75,10 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn">BRUSHES</p>
+        <p class="navdropbtn"> <a href="../HTML/Brush.html">BRUSHES</a></p>
         <div class="dropdwn-content">
-          <a href="">FACE BRUSHES</a>
-          <a href="">EYES BRUSHES</a>
+          <a href="../HTML/facebrush.html">FACE BRUSHES</a>
+          <a href="../HTML/eyebrush.html">EYES BRUSHES</a>
         </div>
       </div>
       <div class="navdropdwn">
