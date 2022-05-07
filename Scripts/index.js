@@ -1,6 +1,4 @@
-// import {navbar,fotter} from "../Components/navbar.js"
-// document.getElementById("navbar").innerHTML = navbar();
-// document.getElementById("footer").innerHTML = fotter();
+
     
     let middle_slide_bar_div = document.querySelector(".middle_s_w")
 

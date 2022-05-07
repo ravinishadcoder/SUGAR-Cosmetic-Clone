@@ -15,7 +15,7 @@
 #search {
     border: none;
 
-  width: 400px;
+  width: 480px;
 
  
 
@@ -163,4 +163,9 @@ cursor: pointer;
   #navlogin{
     display: flex;
     align-items: center;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
   }

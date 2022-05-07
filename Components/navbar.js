@@ -109,12 +109,8 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn">OFFERS</p>
-        <div class="dropdwn-content">
-          <a href="">Lips</a>
-          <a href="">Face</a>
-          <a href="">Eyes</a>
-        </div>
+        <p class="navdropbtn"><a href="../HTML/offerpage.html">Offers</a></p>
+        
       </div>
     </div>
   </div>`
