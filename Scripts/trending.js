@@ -127,6 +127,12 @@ document.querySelector('#lowToHigh').addEventListener('click', ()=>{
     bblSortLH(urlDataArray[0]);
     console.log('low to high')
 })
+document.querySelector('#releventDiv').addEventListener('click',()=>{
+    document.querySelector('#releventDiv').classList.add('sortSelected');
+    document.querySelector('#lowToHigh').classList.remove('sortSelected');
+    document.querySelector('#highToLow').classList.remove('sortSelected');
+    fetchData();
+})
 
 function bblSortLH(urlDataArrayy){
     for(var i = 0; i < urlDataArrayy.length; i++){
@@ -138,6 +144,9 @@ function bblSortLH(urlDataArrayy){
         }
       }
     }
+    document.querySelector('#releventDiv').classList.remove('sortSelected');
+    document.querySelector('#highToLow').classList.remove('sortSelected');
+    document.querySelector('#lowToHigh').classList.add('sortSelected');
     appendData(urlDataArrayy);
 }
 function bblSortHL(urlDataArrayy){
@@ -150,6 +159,9 @@ function bblSortHL(urlDataArrayy){
         }
       }
     }
+    document.querySelector('#releventDiv').classList.remove('sortSelected');
+    document.querySelector('#lowToHigh').classList.remove('sortSelected');
+    document.querySelector('#highToLow').classList.add('sortSelected');
     appendData(urlDataArrayy);
 }
 document.querySelector('.cursorSort').addEventListener('click',()=>{
