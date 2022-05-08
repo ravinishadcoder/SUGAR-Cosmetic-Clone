@@ -7,6 +7,7 @@ const url = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=smashbo
 
 let ratingArray = [];
 const appendData = (data) => {
+    
     countTrendingItem = data.length
     itemCountTrending.innerText = `${countTrendingItem} items`
     let containerContent = document.getElementById("container-content");
@@ -19,7 +20,9 @@ const appendData = (data) => {
         let div = document.createElement('div');
         div.setAttribute('class', 'trending-card');
         div.addEventListener('click', ()=> {
-            setDataToLocal({image_link,name,price},index);
+            
+            ProductPage(image_link,name,price,4);
+           window.location.href = "product.html"
         })
         let div_img_top_num = document.createElement('div');
         div_img_top_num.setAttribute('class', 'img-top-num');
@@ -52,6 +55,7 @@ const appendData = (data) => {
         div.append(div_img_top_num,imgDiv,textDiv,priceDiv,ratingDiv,fevOuterDiv)
         containerContent.append(div);
     });
+
 }
 let urlDataArray = [];
 let defaultArray = []
@@ -60,6 +64,9 @@ const fetchData = async () => {
     middleware.style.display = 'flex';
     let res = await fetch(url);
     let data = await res.json();
+
+    //console.log(data);
+
     console.log(data);
     defaultArray.push(data);
     urlDataArray.push(data);
@@ -99,6 +106,12 @@ document.querySelector('.applyFilter').addEventListener('click', ()=>{
     }
 })
 
+
+function ProductPage(image_link,name,price,rating){
+  let obj = {image_link,name,price,rating};
+  localStorage.setItem("ProductPage",JSON.stringify(obj))
+}
+
 document.querySelector('.cursor').addEventListener('click', ()=> {
     let xy = document.querySelector('.inputCheck').children;
     for(let m = 0; m<xy.length; m++){
@@ -106,7 +119,6 @@ document.querySelector('.cursor').addEventListener('click', ()=> {
     }
     appendData(urlDataArray[0]);
 })
-
 document.querySelector('#highToLow').addEventListener('click', ()=>{
     bblSortHL(urlDataArray[0]);
     console.log('high to low')

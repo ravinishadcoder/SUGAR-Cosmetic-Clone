@@ -120,6 +120,10 @@
         rating.innerText=`rating:  ${el.rating}`;
       }
       
+      div.addEventListener("click",()=>{
+        ProductPage(el);
+        window.location.href = "product.html"
+    })
 
 
       div.append(div2,name1,price,rating);
@@ -142,4 +146,6 @@
    
 
 
-  
+ function ProductPage(elem){
+    localStorage.setItem("ProductPage",JSON.stringify(elem))
+}

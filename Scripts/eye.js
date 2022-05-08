@@ -10,7 +10,7 @@
   fetch(url).then(function(res){
       return res.json();
   }).then(function(res){
-      console.log(res);
+      //console.log(res);
       append(res);
   }).catch(function(err){
       console.log(err);
@@ -82,7 +82,11 @@
       else{
         rating.innerText=`rating:  ${el.rating}`;
       }
-      
+     
+      div.addEventListener("click",()=>{
+        ProductPage(el);
+        window.location.href = "product.html"
+    })
 
 
       div.append(div2,name1,price,rating);
@@ -92,4 +96,8 @@
 
       container.append(demo);
      })  
+ }
+
+ function ProductPage(ele){
+    localStorage.setItem("ProductPage",JSON.stringify(ele))
  }

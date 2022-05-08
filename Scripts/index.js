@@ -866,7 +866,7 @@ document.querySelector(".qbRArr").addEventListener("click",()=>{
 
     // Hot deals part
 
-   
+
     let main_div = document.querySelector(".slider")
     let imageSlide =(arr,container)=>{
         container.innerText = ""
