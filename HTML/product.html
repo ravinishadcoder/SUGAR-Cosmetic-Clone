@@ -26,13 +26,13 @@
     <div class="promain">
     
        <div id="proimgdiv">
-          <img src="https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-14_1.jpg"/>
+         
        </div>
 
        <div id="prodetdiv">
-          <h1>Blend Trend Eyeshadow Brush - 043 Round Xl</h1>
-          <p>4.5 (5)</p>
-          <p>Rs 399.00</p>
+          <h1 id="prname"></h1>
+          <p id="pr_rating"></p>
+          <p id="pr_price"></p>
           <button id="addbtn">Add to Cart </button>
           <p><a href="wishlist.html">Save to wishlist</a></p>
        </div>
@@ -81,5 +81,16 @@
 </html>
 
 <script>
+   let ProducData = JSON.parse(localStorage.getItem("ProductPage"));
+   console.log(ProducData.name);
+   
+   let img = document.createElement("img");
+   img.src = ProducData.image_link;
+   document.getElementById("proimgdiv").append(img);
+   document.getElementById("prname").innerText = ProducData.name;
+   document.getElementById("pr_rating").innerText = "Rating : "+ProducData.rating;
+   document.getElementById("pr_price").innerText = "Rs. : "+ProducData.price;
+   
+   
    
 </script>
