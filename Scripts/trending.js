@@ -53,12 +53,17 @@ const appendData = (data) => {
         containerContent.append(div);
     });
 }
-let urlDataArray = []
+let urlDataArray = [];
+let defaultArray = []
 const fetchData = async () => {
+    let middleware = document.querySelector('.middleware');
+    middleware.style.display = 'flex';
     let res = await fetch(url);
     let data = await res.json();
     console.log(data);
+    defaultArray.push(data);
     urlDataArray.push(data);
+    middleware.style.display = 'none';
     appendData(data);
 }
 fetchData();
@@ -100,4 +105,41 @@ document.querySelector('.cursor').addEventListener('click', ()=> {
         xy[m].childNodes[0].checked = false;
     }
     appendData(urlDataArray[0]);
+})
+
+document.querySelector('#highToLow').addEventListener('click', ()=>{
+    bblSortHL(urlDataArray[0]);
+    console.log('high to low')
+})
+document.querySelector('#lowToHigh').addEventListener('click', ()=>{
+    bblSortLH(urlDataArray[0]);
+    console.log('low to high')
+})
+
+function bblSortLH(urlDataArrayy){
+    for(var i = 0; i < urlDataArrayy.length; i++){
+      for(var j = 0; j < (urlDataArrayy.length-i-1); j++){
+        if(+urlDataArrayy[j].price > +urlDataArrayy[j+1].price){
+          var temp = urlDataArrayy[j]
+          urlDataArrayy[j] = urlDataArrayy[j+1];
+          urlDataArrayy[j+1] = temp;
+        }
+      }
+    }
+    appendData(urlDataArrayy);
+}
+function bblSortHL(urlDataArrayy){
+    for(var i = 0; i < urlDataArrayy.length; i++){
+      for(var j = 0; j < (urlDataArrayy.length-i-1); j++){
+        if(+urlDataArrayy[j].price < +urlDataArrayy[j+1].price){
+          var temp = urlDataArrayy[j]
+          urlDataArrayy[j] = urlDataArrayy[j+1];
+          urlDataArrayy[j+1] = temp;
+        }
+      }
+    }
+    appendData(urlDataArrayy);
+}
+document.querySelector('.cursorSort').addEventListener('click',()=>{
+    fetchData();
 })

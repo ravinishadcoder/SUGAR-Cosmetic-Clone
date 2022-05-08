@@ -12,6 +12,8 @@
 </head>
 
 <body>
+    <div class="mainABC">
+        <div class="middleware"><i class="fa-solid fa-arrows-rotate"></i></div>
     <div id="navbar"></div>
     <div class="maincontainerTrending">
        
@@ -59,7 +61,18 @@
                             <span class="spn-sort"><img src="https://in.sugarcosmetics.com/desc-images/sortIcon.png">
                                 &nbsp;
                                 Sort</span>
-                            <div class="sort-div-card"></div>
+                            <div class="sort-div-card">
+                                <div class="sort-div-card-top">
+                                    <div>Select Sorting</div>
+                                    <div class="cursorSort">Clear all</div>
+                                </div>
+                                <div class="border-top"></div>
+                                <div class="sort-div-category">
+                                    <div class="sortSelected sortOne">Relevent</div>
+                                    <div id="highToLow" class="sortOne">Price - High to Low</div>
+                                    <div id="lowToHigh" class="sortOne">Price - Low to High</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -76,6 +89,7 @@
        
     </div>
     <div id="footer"></div>
+    </div>
     <script src="https://kit.fontawesome.com/9b49c92c6d.js" crossorigin="anonymous"></script>
     <script src="../Scripts/common.js" type="module"></script>
     <script src="../Scripts/trending.js" type="module"></script>
