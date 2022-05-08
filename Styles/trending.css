@@ -220,3 +220,86 @@
 .cursor{
     cursor: pointer;
 }
+.sort-div-card{
+    display: none;
+    position: absolute;
+}
+.sortBtnDiv{
+    position: relative;
+}
+.sortBtnDiv:hover .sort-div-card{
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+    z-index: 1;
+    left: auto!important;
+    right: 0;
+    width: 15rem;
+}
+.sort-div-card-top{
+    font-size:13px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+}
+.border-top{
+    border-top: 1px solid #dee2e6;
+}
+.sort-div-category{
+    color: #6c757d!important;
+    font-size: 13px;
+}
+.catOneSort p,.catTwoSort p{
+    margin-left: 5px;
+    text-align: start;
+    font-size: 13px;
+    color: gray;
+}
+.sortOne{
+    padding: 10px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.sortOne:hover{
+    background-color: #efecec;
+}
+.sortSelected{
+    background-color: black;
+    color: #fff;
+}
+.sortSelected:hover{
+    background-color: black;
+    color: #fff;
+}
+.cursorSort{
+    cursor: pointer;
+}
+.middleware{
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.24);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+.middleware i{
+    font-size: 7rem;
+    color: #fff;
+    animation: rotation 2s infinite linear;
+}
+.mainABC{
+    position: relative;
+}
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
