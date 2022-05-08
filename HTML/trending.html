@@ -12,14 +12,16 @@
 </head>
 
 <body>
+    <div class="mainABC">
+        <div class="middleware"><i class="fa-solid fa-arrows-rotate"></i></div>
     <div id="navbar"></div>
     <div class="maincontainerTrending">
        
         <div class="trending-main">
             <div class="container-fluid">
                 <div class="upper-menu">
-                    <div class="path-trending"><img
-                            src="https://in.sugarcosmetics.com/desc-images/breadcrumb_home.svg" />&nbsp;&nbsp;/&nbsp;
+                    <div class="path-trending"><a href="../HTML/index.html"><img
+                        src="https://in.sugarcosmetics.com/desc-images/breadcrumb_home.svg" /></a>&nbsp;&nbsp;/&nbsp;
                         Trending</div>
 
                     <div class="filter-trending">
@@ -34,18 +36,43 @@
                                 <div class="border-top"></div>
                                 <div class="filter-div-category">
                                     <div class="catOne">Product Type</div>
-                                    <div class="catTwo">Feature</div>
-                                    <div class="catThree">Finish</div>
-                                    <div class="catFour">Formulation</div>
-                                    <div class="catFive">Concern</div>
+                                    <div class="catTwo">Category</div>
                                 </div>
+                                <div class="filterCat">
+                                    <div class="catOne inputCheck">
+                                        <p><input type="checkbox">Bronzer</p>
+                                        <p><input type="checkbox">Blush</p>
+                                        <p><input type="checkbox">Eyebrow</p>
+                                        <p><input type="checkbox">Foundation</p>
+                                        <p><input type="checkbox">Eyeliner</p>
+                                        <p><input type="checkbox">Lipstick</p>
+                                        <p><input type="checkbox">Eyeshadow</p>
+                                    </div>
+                                    <div class="catTwo">
+                                        <p><input type="checkbox">Liquid</p>
+                                        <p><input type="checkbox">Palette</p>
+                                        <p><input type="checkbox">Lipstick</p>
+                                    </div>
+                                </div>
+                                <div class="applyFilter">Apply Filter(s)</div>
                             </div>
                         </div>
                         <div class="sortBtnDiv">
                             <span class="spn-sort"><img src="https://in.sugarcosmetics.com/desc-images/sortIcon.png">
                                 &nbsp;
                                 Sort</span>
-                            <div class="sort-div-card"></div>
+                            <div class="sort-div-card">
+                                <div class="sort-div-card-top">
+                                    <div>Select Sorting</div>
+                                    <div class="cursorSort">Clear all</div>
+                                </div>
+                                <div class="border-top"></div>
+                                <div class="sort-div-category">
+                                    <div class="sortSelected sortOne">Relevent</div>
+                                    <div id="highToLow" class="sortOne">Price - High to Low</div>
+                                    <div id="lowToHigh" class="sortOne">Price - Low to High</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -53,7 +80,7 @@
                 <div class="lower-menu">
                     <p class="trending-tag">Trending</p>
                     <p>-</p>
-                    <p class="item-count">43 items</p>
+                    <p class="item-count">0 items</p>
                 </div>
             </div>
             <div id="container-content">
@@ -62,6 +89,7 @@
        
     </div>
     <div id="footer"></div>
+    </div>
     <script src="https://kit.fontawesome.com/9b49c92c6d.js" crossorigin="anonymous"></script>
     <script src="../Scripts/common.js" type="module"></script>
     <script src="../Scripts/trending.js" type="module"></script>

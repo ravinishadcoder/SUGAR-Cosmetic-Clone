@@ -7,6 +7,7 @@ const url = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=smashbo
 
 let ratingArray = [];
 const appendData = (data) => {
+    
     countTrendingItem = data.length
     itemCountTrending.innerText = `${countTrendingItem} items`
     let containerContent = document.getElementById("container-content");
@@ -19,7 +20,9 @@ const appendData = (data) => {
         let div = document.createElement('div');
         div.setAttribute('class', 'trending-card');
         div.addEventListener('click', ()=> {
-            setDataToLocal({image_link,name,price},index);
+            
+            ProductPage(image_link,name,price,4);
+           window.location.href = "product.html"
         })
         let div_img_top_num = document.createElement('div');
         div_img_top_num.setAttribute('class', 'img-top-num');
@@ -52,13 +55,22 @@ const appendData = (data) => {
         div.append(div_img_top_num,imgDiv,textDiv,priceDiv,ratingDiv,fevOuterDiv)
         containerContent.append(div);
     });
-    console.log(ratingArray);
-}
 
+}
+let urlDataArray = [];
+let defaultArray = []
 const fetchData = async () => {
+    let middleware = document.querySelector('.middleware');
+    middleware.style.display = 'flex';
     let res = await fetch(url);
     let data = await res.json();
+
+    //console.log(data);
+
     console.log(data);
+    defaultArray.push(data);
+    urlDataArray.push(data);
+    middleware.style.display = 'none';
     appendData(data);
 }
 fetchData();
@@ -72,4 +84,74 @@ const setDataToLocal = (data,index) => {
     localStorage.setItem('productData', JSON.stringify(obj));
 }
 
+document.querySelector('.applyFilter').addEventListener('click', ()=>{
+    let filterArr = {};
+    let arrF = [];
+    let xy = document.querySelector('.inputCheck').children;
+    for(let m = 0; m<xy.length; m++){
+        if(xy[m].childNodes[0].checked === true){
+            filterArr[xy[m].innerText.toLowerCase()] = true;
+        }
+    }
+    if(Object.keys(filterArr).length > 0){
+        for(let nn = 0; nn<urlDataArray[0].length; nn++){
+            if(urlDataArray[0][nn].product_type in filterArr){
+                arrF.push(urlDataArray[0][nn])
+            }
+        }
+        appendData(arrF);
+    }
+    else{
+        appendData(urlDataArray[0]);
+    }
+})
 
+
+function ProductPage(image_link,name,price,rating){
+  let obj = {image_link,name,price,rating};
+  localStorage.setItem("ProductPage",JSON.stringify(obj))
+}
+
+document.querySelector('.cursor').addEventListener('click', ()=> {
+    let xy = document.querySelector('.inputCheck').children;
+    for(let m = 0; m<xy.length; m++){
+        xy[m].childNodes[0].checked = false;
+    }
+    appendData(urlDataArray[0]);
+})
+document.querySelector('#highToLow').addEventListener('click', ()=>{
+    bblSortHL(urlDataArray[0]);
+    console.log('high to low')
+})
+document.querySelector('#lowToHigh').addEventListener('click', ()=>{
+    bblSortLH(urlDataArray[0]);
+    console.log('low to high')
+})
+
+function bblSortLH(urlDataArrayy){
+    for(var i = 0; i < urlDataArrayy.length; i++){
+      for(var j = 0; j < (urlDataArrayy.length-i-1); j++){
+        if(+urlDataArrayy[j].price > +urlDataArrayy[j+1].price){
+          var temp = urlDataArrayy[j]
+          urlDataArrayy[j] = urlDataArrayy[j+1];
+          urlDataArrayy[j+1] = temp;
+        }
+      }
+    }
+    appendData(urlDataArrayy);
+}
+function bblSortHL(urlDataArrayy){
+    for(var i = 0; i < urlDataArrayy.length; i++){
+      for(var j = 0; j < (urlDataArrayy.length-i-1); j++){
+        if(+urlDataArrayy[j].price < +urlDataArrayy[j+1].price){
+          var temp = urlDataArrayy[j]
+          urlDataArrayy[j] = urlDataArrayy[j+1];
+          urlDataArrayy[j+1] = temp;
+        }
+      }
+    }
+    appendData(urlDataArrayy);
+}
+document.querySelector('.cursorSort').addEventListener('click',()=>{
+    fetchData();
+})

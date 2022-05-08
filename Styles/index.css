@@ -1,4 +1,8 @@
 /* /top Slide bar */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100&family=Inter:wght@200;700&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;500&family=Quicksand:wght@300&family=Ubuntu:wght@500&display=swap');      
+*{
+  font-family:Quicksand ;
+}
 .middle_part{
     margin: 0;
     padding: 0;
@@ -244,6 +248,26 @@
 }
 .controls{
 
+<<<<<<< HEAD
+=======
+    position: absolute;
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 30px;
+        visibility: hidden;
+}
+.Lcont,.Rcont{
+    /* position: absolute; */
+    height: 40px;
+    width: 40px;
+   
+
+    z-index: 100;
+>>>>>>> master
     position: absolute;
         width: 1200px;
         margin: auto;
@@ -261,7 +285,14 @@
    
 }
 
+<<<<<<< HEAD
 
+=======
+.common > img{
+    width: 30px;
+
+}
+>>>>>>> master
 
 .eighth_box:hover .controls{
     visibility: visible; 
