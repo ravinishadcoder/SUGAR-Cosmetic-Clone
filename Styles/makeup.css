@@ -61,6 +61,9 @@
     cursor: pointer;
     
  }
+ #img1{
+     cursor: pointer;
+ }
  #bot_div >img{
      height: 25px;
     padding-left: 20p;
