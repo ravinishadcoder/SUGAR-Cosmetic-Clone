@@ -243,6 +243,7 @@
     
 }
 .controls{
+
     position: absolute;
         width: 1200px;
         margin: auto;
@@ -259,6 +260,8 @@
     width: 40px;
    
 }
+
+
 
 .eighth_box:hover .controls{
     visibility: visible; 

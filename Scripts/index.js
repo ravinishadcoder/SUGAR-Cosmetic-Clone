@@ -1,6 +1,4 @@
-import {navbar,fotter} from "../Components/navbar.js"
-document.querySelector(".navbar").innerHTML = navbar();
-document.querySelector(".footer").innerHTML = fotter();
+
     
     let middle_slide_bar_div = document.querySelector(".middle_s_w")
 
@@ -613,9 +611,6 @@ document.querySelector(".footer").innerHTML = fotter();
     let top_slide_bar_div = document.querySelector(".sliding_window")
     let isPaused = false;
     let topTemp  = 0
-    let winWidth = 1263
-    let i=1;
-
     setInterval(()=>{
         
         

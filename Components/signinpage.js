@@ -87,10 +87,10 @@ let infopage = ()=>{
 <p class="detail">Or Enter Account Details</p>
 <div id="infoinput">
     <div class="infoname">
-        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Name" id="username" >
     </div>
     <div class="infoname">
-        <input type="text" placeholder="Last-Name">
+        <input type="text" placeholder="Last-Name" id="userlastname">
     </div>
 </div>
 <div id="infoemail">
