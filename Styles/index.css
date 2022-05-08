@@ -254,33 +254,18 @@
     
 }
 .controls{
-   
-    top: 0;
-    left: 0;
-    top: 45%;
-    transform: translateY(-50%);
-    visibility: hidden;
-}
-.Lcont,.Rcont{
+    z-index: 100;
     position: absolute;
-    height: 40px;
-    width: 40px;
-    margin:auto;
-    
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    visibility: visible;
+    width: 90%;
 }
-.common{
-    position: absolute;
-   top: 50%;
-   transform: translateY(-50%);
-}
-.Lcont{
-   
-   margin: -220px 0px 0px 100px;
 
-}
-.Rcont{
-    margin: -220px 0px 0px 1100px
-    
+.common > img{
+    width: 30px;
 }
 .eighth_box:hover .controls{
     visibility: visible; 

@@ -614,7 +614,6 @@
     let isPaused = false;
     let topTemp  = 0
     let start = (arr,container)=>{
-        container.innerText = ""
 
         for(let i=0; i<arr.length; i++){
             let img = document.createElement("img")
