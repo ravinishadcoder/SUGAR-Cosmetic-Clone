@@ -1,7 +1,7 @@
-import {navbar,fotter} from "../Components/navbar.js";
+// import {navbar,fotter} from "../Components/navbar.js";
 
-document.getElementById("navbar").innerHTML = navbar();
-document.getElementById("footer").innerHTML = fotter();
+// document.getElementById("navbar").innerHTML = navbar();
+// document.getElementById("footer").innerHTML = fotter();
 
 // let arr = [
 //     {
@@ -66,6 +66,7 @@ const displayCartList = (array) => {
         controlDeletCart.innerHTML = `<i class="fa-solid fa-trash-can"></i>`
         controlDeletCart.addEventListener('click', ()=>{
             deleteCartItem(index);
+           
         })
         let controlPlusMinusCart = document.createElement('div');
         controlPlusMinusCart.setAttribute('class','controlPlusMinusCart');
@@ -129,13 +130,16 @@ const deleteCartItem = (index) => {
         displayCartList(array);
         displayNone();
         localStorage.setItem('cartItems', JSON.stringify(array))
+
     } 
     else {
         console.log("You canceled!");
     }
+    window.location.reload()
 }
 
 const itemDecrese = (index,controlValue,spanQty,itemTotal) => {
+    
     if(array[index].qty > 1){
         console.log('- button',index);
         array[index].qty = array[index].qty-1;
@@ -166,6 +170,7 @@ const itemDecrese = (index,controlValue,spanQty,itemTotal) => {
             displayCartList(array);
             displayNone();
             localStorage.setItem('cartItems', JSON.stringify(array));
+           
         } 
         else {
             console.log("You canceled!");

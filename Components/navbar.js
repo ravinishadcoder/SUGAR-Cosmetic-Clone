@@ -55,7 +55,7 @@ let navbar = (abc)=>{
       </div>
       <div id="navcart">
         <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-bag-shopping"></i><span><div id="counter">${abc}</div></span>
+        <a href="../HTML/cart.html" id="cart_count"><i class="fa-solid fa-bag-shopping"></i><span><div id="counter">${abc}</div></span></a>
         <img
           src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg"
           alt=""
@@ -240,3 +240,4 @@ let fotter = ()=>{
 </div>`
 }
 export {navbar,fotter}
+
