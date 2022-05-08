@@ -155,9 +155,11 @@ cursor: pointer;
     border: 1px solid grey;
       height: 18px;
       width: 15px;
+      text-align: center;
       border-radius: 50%;
       margin-left: -9px;
       position: relative;
+      display: none;
   }
 
   #navlogin{
@@ -168,4 +170,8 @@ cursor: pointer;
   a{
     text-decoration: none;
     color: black;
+  }
+
+  #cart_count{
+    display: contents;
   }
