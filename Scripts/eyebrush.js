@@ -2,7 +2,7 @@
  let eyeBrush = [
 
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-14_1.jpg?v=1627659982",
         name: "BLEND TREND EYESHADOW BRUSH - 043 ROUND Xl",
         price: 399,
@@ -11,7 +11,7 @@
     },
 
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-3-min.jpg?v=1627573657",
         name: "Blend Trend Eyeshadow Brush - 042…",
         price: 499,
@@ -20,7 +20,7 @@
     },
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-2-min.jpg?v=1627573652",
         name: "Blend Trend Eyeshadow Brush - 041…",
         price: 399,
@@ -29,7 +29,7 @@
     }, 
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-5-min.jpg?v=1627573639",
         name: "Blend Trend Dual Eyeshadow Brush…",
         price: 599,
@@ -38,7 +38,7 @@
     }, 
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-13.jpg?v=1627659977",
         name: "Blend Trend Dual Eyeshadow Brush…",
         price: 599,
@@ -63,7 +63,7 @@ eyeBrush.map(function (elem) {
     img_shade.src = elem.shade_image;
 
     var img = document.createElement("img");
-    img.src = elem.image_url;
+    img.src = elem.image_link;
     img.classList.add("main-img");
 
     var name = document.createElement("p");
@@ -79,8 +79,9 @@ eyeBrush.map(function (elem) {
     rating.innerText = elem.rating;
 
     var star_icon = document.createElement("span");
-    star_icon.innerHTML += '<i class="fa fa-star" aria-hidden="true"></i>'
+    star_icon.innerHTML += '<i class="fa fa-star" aria-hidden="true"></i>';
 
+ 
     var heart_icon = document.createElement("span");
     heart_icon.innerHTML += '<i class="fa-regular fa-heart"></i>'
     heart_icon.addEventListener("click", function () {
@@ -99,6 +100,11 @@ eyeBrush.map(function (elem) {
     btn.addEventListener("click", function () {
         addToCart(elem);
     });
+
+    box.addEventListener("click",()=>{
+        ProductPage(elem);
+        window.location.href = "product.html"
+    })
 
     top.append(shade, img_shade);
     price_wrapper.append(strike, price)
@@ -124,3 +130,8 @@ var cartArray= JSON.parse(localStorage.getItem("cartItem")) || [];
 
     localStorage.setItem("wishlistItem",JSON.stringify(cartwish))
  }
+
+
+ function ProductPage(elem){
+    localStorage.setItem("ProductPage",JSON.stringify(elem))
+}
