@@ -1,10 +1,5 @@
     
-    import {navbar,fotter} from "../Components/navbar.js"
-
-    document.getElementById("footer").innerHTML=fotter();
-    document.getElementById("navbar").innerHTML=navbar();
-    var container=document.getElementById("container");
-
+    
 
  let fetchdata=async(value)=>{
     try{

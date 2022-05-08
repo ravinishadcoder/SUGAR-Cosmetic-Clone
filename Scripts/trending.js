@@ -1,7 +1,6 @@
-import {navbar,fotter} from "../Components/navbar.js";
+
 let countTrendingItem = 0;
-document.getElementById("navbar").innerHTML = navbar();
-document.getElementById("footer").innerHTML = fotter();
+
 let itemCountTrending = document.querySelector('.item-count');
 itemCountTrending.innerText = `${countTrendingItem} items`
 const url = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=smashbox';
@@ -53,13 +52,13 @@ const appendData = (data) => {
         div.append(div_img_top_num,imgDiv,textDiv,priceDiv,ratingDiv,fevOuterDiv)
         containerContent.append(div);
     });
-    console.log(ratingArray);
 }
-
+let urlDataArray = []
 const fetchData = async () => {
     let res = await fetch(url);
     let data = await res.json();
     console.log(data);
+    urlDataArray.push(data);
     appendData(data);
 }
 fetchData();
@@ -73,4 +72,32 @@ const setDataToLocal = (data,index) => {
     localStorage.setItem('productData', JSON.stringify(obj));
 }
 
+document.querySelector('.applyFilter').addEventListener('click', ()=>{
+    let filterArr = {};
+    let arrF = [];
+    let xy = document.querySelector('.inputCheck').children;
+    for(let m = 0; m<xy.length; m++){
+        if(xy[m].childNodes[0].checked === true){
+            filterArr[xy[m].innerText.toLowerCase()] = true;
+        }
+    }
+    if(Object.keys(filterArr).length > 0){
+        for(let nn = 0; nn<urlDataArray[0].length; nn++){
+            if(urlDataArray[0][nn].product_type in filterArr){
+                arrF.push(urlDataArray[0][nn])
+            }
+        }
+        appendData(arrF);
+    }
+    else{
+        appendData(urlDataArray[0]);
+    }
+})
 
+document.querySelector('.cursor').addEventListener('click', ()=> {
+    let xy = document.querySelector('.inputCheck').children;
+    for(let m = 0; m<xy.length; m++){
+        xy[m].childNodes[0].checked = false;
+    }
+    appendData(urlDataArray[0]);
+})

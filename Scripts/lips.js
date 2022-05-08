@@ -1,9 +1,5 @@
 
- import {navbar,fotter} from "../Components/navbar.js";
  
- document.getElementById("navbar").innerHTML=navbar();
- document.getElementById("footer").innerHTML=fotter();
-
 
  let url =`http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline&product_type=lipstick`;
 

@@ -23,6 +23,16 @@ close.addEventListener("click",()=>{
     login.style.transition="2s";  
 })
 
+$(".enterotp").keyup(function () {
+    if (this.value.length == this.maxLength) {
+      $(this).next('.enterotp').focus();
+    }
+});
+$(".loginput1").keyup(function () {
+    if (this.value.length == this.maxLength) {
+      $(this).next('.loginput1').focus();
+    }
+});
 
 let reqotp = document.getElementById("requestptp");
 
@@ -48,13 +58,36 @@ varifyotp.addEventListener("click",()=>{
        
    }
    else{
-       alert("Login Succesfull")
+      
        document.getElementById("loginbox").innerHTML=info;
-    //    window.location.href = "Demo.html"
+       userName();
    }
 })
-
-
+var obj = JSON.parse(localStorage.getItem("userDetails"))||{};
+function userName(){
+    let savebtn = document.getElementById("savebtn");
+    savebtn.addEventListener("click",()=>{
+    let username = document.getElementById("username").value;
+    let lastname = document.getElementById("userlastname").value;
+    obj = {username,lastname};
+    localStorage.setItem("userDetails",JSON.stringify(obj));
+    window.location.href = "index.html"
+    
+   })  
+}
+     localStorage.setItem("userDetails",JSON.stringify(obj));
+  
+    let userInfo = JSON.parse(localStorage.getItem("userDetails"));
+    //console.log("obj",Object.keys(userInfo).length)
+  if(Object.keys(userInfo).length>0){
+    let changename = document.getElementById("changename");
+    changename.innerText = "Hi,"+userInfo.username+" "+userInfo.lastname+" " ;
+    let changebox = document.getElementById("navlogin");
+    
+    changebox.style.backgroundColor = "lightgrey";
+    changebox.style.height = "30px";
+    changebox.style.padding = "5px";
+  }
 // search functionallity
 
 let search = document.getElementById("nav_btn");
@@ -73,5 +106,15 @@ search.addEventListener("click",()=>{
     if(searchData=="facebrush"){
         window.location.href = "facebrush.html"
     }
+    if(searchData=="lipstick"){
+        window.location.href = "lips.html"
+    }
+    if(searchData=="eye"){
+        window.location.href = "eye.html"
+    }
 
 })
+
+
+// autotab
+

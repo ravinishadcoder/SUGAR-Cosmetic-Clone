@@ -243,6 +243,7 @@
     
 }
 .controls{
+
     position: absolute;
         width: 1200px;
         margin: auto;
@@ -258,6 +259,20 @@
     height: 40px;
     width: 40px;
    
+
+    z-index: 100;
+    position: absolute;
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    visibility: visible;
+    width: 90%;
+}
+
+.common > img{
+    width: 30px;
+
 }
 
 .eighth_box:hover .controls{
