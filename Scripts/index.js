@@ -1,6 +1,4 @@
-import {navbar,fotter} from "../Components/navbar.js"
-document.querySelector(".navbar").innerHTML = navbar();
-document.querySelector(".footer").innerHTML = fotter();
+
     
     let middle_slide_bar_div = document.querySelector(".middle_s_w")
 
@@ -11,6 +9,8 @@ document.querySelector(".footer").innerHTML = fotter();
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1571460a-0b29-4920-8c80-7e37f048def4.jpg"},
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/2726f64a-3b5b-4ca9-b066-2ed3d9245582.gif"},
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/177972e0-4583-428b-b4db-da5546b71310.jpg"},
+       
+    
     ]
 
     let bestSellersLeftArr = [
@@ -708,7 +708,7 @@ document.querySelector(".footer").innerHTML = fotter();
             
         })
    
-        
+
 
 //    Best sellers part
 
@@ -950,8 +950,8 @@ let vid_div = document.querySelector(".vidSlider")
         let vidTemp = 0
         document.querySelector("#left").addEventListener("click",()=>{
                     let winWidth = window.outerWidth
-                vidTemp = vidTemp - winWidth*0.92
-                let final = winWidth*4
+                vidTemp = vidTemp - winWidth*0.74
+               
             if(vidTemp>0){
                 console.group("left",vidTemp)
                 vid_div.style.transform = `translateX(${-vidTemp}px)`
@@ -965,13 +965,13 @@ let vid_div = document.querySelector(".vidSlider")
         document.querySelector("#right").addEventListener("click",()=>{
             let winWidth = window.outerWidth
         
-            vidTemp = vidTemp + winWidth*0.92
+            vidTemp = vidTemp + winWidth*0.74
             console.group("right",vidTemp,winWidth)
             if(vidTemp<winWidth*(3)){
                 vid_div.style.transform = `translateX(${-vidTemp}px)`
                 vid_div.style.transition = ".4s"
             }else{
-                vidTemp = vidTemp - winWidth*0.92
+                vidTemp = vidTemp - winWidth*0.74
             }
         })
    

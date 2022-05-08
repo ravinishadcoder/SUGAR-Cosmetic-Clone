@@ -4,10 +4,11 @@ let navbar = ()=>{
     return `<div id="temp">
     <div id="navmain">
       <div id="navlogo">
-        <img
-          src="https://in.sugarcosmetics.com/desc-images/SUGARLogo1.png"
-          alt=""
-        />
+      <a href="../HTML/index.html"><img
+      src="https://in.sugarcosmetics.com/desc-images/SUGARLogo1.png"
+      alt=""
+    /></a>
+        
       </div>
       <div id="navsearch">
       <div class="navdropdwn">
@@ -49,7 +50,7 @@ let navbar = ()=>{
       <div id="signappend"></div>
       <div id="navlogin">
         <p>
-          <span><i class="fa-solid fa-user"></i></span>Login/Register
+          <span><i class="fa-solid fa-user"></i></span><div id="changename">Login/Register</div>
         </p>
       </div>
       <div id="navcart">
@@ -74,10 +75,10 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn">BRUSHES</p>
+        <p class="navdropbtn"> <a href="../HTML/Brush.html">BRUSHES</a></p>
         <div class="dropdwn-content">
-          <a href="">FACE BRUSHES</a>
-          <a href="">EYES BRUSHES</a>
+          <a href="../HTML/facebrush.html">FACE BRUSHES</a>
+          <a href="../HTML/eyebrush.html">EYES BRUSHES</a>
         </div>
       </div>
       <div class="navdropdwn">
@@ -92,7 +93,7 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn">TRENDING</p>
+        <p class="navdropbtn"><a href="../HTML/trending.html">Trending</a></p>
         <div class="dropdwn-content">
           <a href="">SUGAR MERCH STATION</a>
           <a href="">MAKEUP KITS</a>
@@ -108,12 +109,8 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn">OFFERS</p>
-        <div class="dropdwn-content">
-          <a href="">Lips</a>
-          <a href="">Face</a>
-          <a href="">Eyes</a>
-        </div>
+        <p class="navdropbtn"><a href="../HTML/offerpage.html">Offers</a></p>
+        
       </div>
     </div>
   </div>`
