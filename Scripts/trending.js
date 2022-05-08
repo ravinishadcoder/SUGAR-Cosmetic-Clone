@@ -54,11 +54,12 @@ const appendData = (data) => {
     });
     console.log(ratingArray);
 }
-
+let urlDataArray = []
 const fetchData = async () => {
     let res = await fetch(url);
     let data = await res.json();
     console.log(data);
+    urlDataArray.push(data);
     appendData(data);
 }
 fetchData();
@@ -72,4 +73,24 @@ const setDataToLocal = (data,index) => {
     localStorage.setItem('productData', JSON.stringify(obj));
 }
 
+document.querySelector('.applyFilter').addEventListener('click', ()=>{
+    let filterArr = {};
+    let arrF = [];
+    let xy = document.querySelector('.inputCheck').children;
+    for(let m = 0; m<xy.length; m++){
+        if(xy[m].childNodes[0].checked === true){
+            filterArr[xy[m].innerText.toLowerCase()] = true;
+            // filterArr.push([xy[m].innerText,xy[m].childNodes[0].checked])
+        }
+    }
+    for(let nn = 0; nn<urlDataArray[0].length; nn++){
+        if(urlDataArray[0][nn].product_type in filterArr){
+            arrF.push(urlDataArray[0][nn])
+            console.log(urlDataArray[0][nn].product_type);
+        }
+    }
+    // console.log(xy)
+    console.log(arrF)
+    appendData(arrF);
+})
 
