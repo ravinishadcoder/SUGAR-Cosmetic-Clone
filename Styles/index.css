@@ -262,36 +262,8 @@
     height: 40px;
     width: 40px;
    
-
-
-    z-index: 100;
-
-    position: absolute;
-        width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: 30px;
-        visibility: hidden;
-}
-.Lcont,.Rcont{
-    /* position: absolute; */
-    height: 40px;
-    width: 40px;
-   
-
-
 }
 
-
-
-
-.common > img{
-    width: 30px;
-
-}
 
 
 .eighth_box:hover .controls{
