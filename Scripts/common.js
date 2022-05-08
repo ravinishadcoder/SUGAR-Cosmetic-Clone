@@ -1,6 +1,8 @@
 import {navbar,fotter} from "../Components/navbar.js";
+let ProducData = JSON.parse(localStorage.getItem("cartItems"))||[];
+console.log(ProducData.length)
 
-document.getElementById("navbar").innerHTML = navbar()
+document.getElementById("navbar").innerHTML = navbar(ProducData.length)
 document.getElementById("footer").innerHTML = fotter()
 import {signinpage,infopage} from "../Components/signinpage.js"
 document.getElementById("signappend").innerHTML = signinpage();
@@ -116,5 +118,4 @@ search.addEventListener("click",()=>{
 })
 
 
-// autotab
 

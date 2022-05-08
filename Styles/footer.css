@@ -115,3 +115,9 @@
       color: white;
       margin-top: 50px;
   }
+
+  @media (min-width: 414px) and (max-width: 896px) {
+    #mainbottom {
+        background-color: yellow;
+    }
+}

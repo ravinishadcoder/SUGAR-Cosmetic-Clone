@@ -1,6 +1,6 @@
 
 
-let navbar = ()=>{
+let navbar = (abc)=>{
     return `<div id="temp">
     <div id="navmain">
       <div id="navlogo">
@@ -55,7 +55,7 @@ let navbar = ()=>{
       </div>
       <div id="navcart">
         <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-bag-shopping"></i><span><div id="counter"></div></span>
+        <i class="fa-solid fa-bag-shopping"></i><span><div id="counter">${abc}</div></span>
         <img
           src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg"
           alt=""
@@ -93,7 +93,7 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn"><a href="../HTML/trending.html">Trending</a></p>
+        <p class="navdropbtn"><a href="../HTML/trending.html">TRENDING</a></p>
         <div class="dropdwn-content">
           <a href="">SUGAR MERCH STATION</a>
           <a href="">MAKEUP KITS</a>
@@ -109,7 +109,7 @@ let navbar = ()=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn"><a href="../HTML/offerpage.html">Offers</a></p>
+        <p class="navdropbtn"><a href="../HTML/offerpage.html">OFFERS</a></p>
         
       </div>
     </div>
