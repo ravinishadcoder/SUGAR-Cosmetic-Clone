@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../Styles/product.css"/>
-
+    <link rel="stylesheet" href="../Styles/navbar.css" />
+    <link rel="stylesheet" href="../Styles/signin.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
     
 </head>
 
 <body>
+    <div id="navbar"></div>
+    <br>
     <div id="hometitle">
     <img src="https://in.sugarcosmetics.com/desc-images/breadcrumb_home.svg"/>
     <p>/
@@ -76,10 +80,12 @@
         <li>SUGAR Blend Trend Brushes feature high quality synthetic, 100% cruelty-free bristles that ensure precise application and diffusion of product</li>
         <li>Easy to clean and durable, these makeup brushes are made with high-quality aluminum ferrules and premium wooden handles</li>
     </ul>
-  </div> 
+  </div>
+  <br>
+   <div id="footer"></div>
 </body>
 </html>
-
+<script src="../Scripts/common.js" type="module"></script>
 <script>
    let ProducData = JSON.parse(localStorage.getItem("ProductPage"));
    console.log(ProducData.name);
