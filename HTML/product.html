@@ -37,7 +37,7 @@
           <h1 id="prname"></h1>
           <p id="pr_rating"></p>
           <p id="pr_price"></p>
-          <button id="addbtn">Add to Cart </button>
+          <button id="addbtn" onclick="addToCartBtn()">Add to Cart </button>
           <p><a href="wishlist.html">Save to wishlist</a></p>
        </div>
 
@@ -97,6 +97,20 @@
    document.getElementById("pr_rating").innerText = "Rating : "+ProducData.rating;
    document.getElementById("pr_price").innerText = "Rs. : "+ProducData.price;
    
-   
+   let cartData = JSON.parse(localStorage.getItem('cartItems')) || [];
+   const addToCartBtn = () => {
+       let obj = {
+           img:ProducData.image_link,
+           item_detail:'',
+           price:+ProducData.price,
+           qty:1,
+           title:ProducData.name
+       }
+       cartData.push(obj);
+       console.log('cartData:', cartData)
+       
+       localStorage.setItem('cartItems', JSON.stringify(cartData));
+       window.location.href = '../HTML/cart.html';
+   }
    
 </script>

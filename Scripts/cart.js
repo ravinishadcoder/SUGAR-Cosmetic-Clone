@@ -128,7 +128,7 @@ const deleteCartItem = (index) => {
         console.log(array);
         displayCartList(array);
         displayNone();
-        // localStorage.setItem('cartItems', JSON.stringify(array))
+        localStorage.setItem('cartItems', JSON.stringify(array))
     } 
     else {
         console.log("You canceled!");
@@ -165,7 +165,7 @@ const itemDecrese = (index,controlValue,spanQty,itemTotal) => {
             console.log(array);
             displayCartList(array);
             displayNone();
-            // localStorage.setItem('cartItems', JSON.stringify(array))
+            localStorage.setItem('cartItems', JSON.stringify(array));
         } 
         else {
             console.log("You canceled!");
