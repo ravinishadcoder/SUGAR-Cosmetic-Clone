@@ -1,7 +1,6 @@
-import {navbar,fotter} from "../Components/navbar.js";
+
 let countTrendingItem = 0;
-document.getElementById("navbar").innerHTML = navbar();
-document.getElementById("footer").innerHTML = fotter();
+
 let itemCountTrending = document.querySelector('.item-count');
 itemCountTrending.innerText = `${countTrendingItem} items`
 const url = 'https://makeup-api.herokuapp.com/api/v1/products.json?brand=smashbox';

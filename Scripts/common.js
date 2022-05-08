@@ -23,7 +23,16 @@ close.addEventListener("click",()=>{
     login.style.transition="2s";  
 })
 
-
+$(".enterotp").keyup(function () {
+    if (this.value.length == this.maxLength) {
+      $(this).next('.enterotp').focus();
+    }
+});
+$(".loginput1").keyup(function () {
+    if (this.value.length == this.maxLength) {
+      $(this).next('.loginput1').focus();
+    }
+});
 
 let reqotp = document.getElementById("requestptp");
 
@@ -94,19 +103,15 @@ search.addEventListener("click",()=>{
     if(searchData=="facebrush"){
         window.location.href = "facebrush.html"
     }
+    if(searchData=="lipstick"){
+        window.location.href = "lips.html"
+    }
+    if(searchData=="eye"){
+        window.location.href = "eye.html"
+    }
 
 })
 
 
 // autotab
 
-$(".enterotp").keyup(function () {
-    if (this.value.length == this.maxLength) {
-      $(this).next('.enterotp').focus();
-    }
-});
-$(".loginput1").keyup(function () {
-    if (this.value.length == this.maxLength) {
-      $(this).next('.loginput1').focus();
-    }
-});
