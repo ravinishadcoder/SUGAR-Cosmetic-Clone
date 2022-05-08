@@ -218,9 +218,6 @@
 }
 
 
-
-
-
 /* video part starts */
 
 .eighth_box_video_div{
@@ -247,6 +244,18 @@
     
 }
 .controls{
+<<<<<<< HEAD
+  position: absolute;
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-left: 30px;
+        visibility: hidden;
+=======
+
     position: absolute;
     width: 1200px;
     margin: auto;
@@ -256,6 +265,7 @@
     transform: translateY(-50%);
     margin-left: 30px;
     visibility: hidden;
+>>>>>>> origin
 }
 .Lcont,.Rcont{
     height: 40px;
@@ -263,11 +273,11 @@
    
 }
 
-.common > img{
-    width: 30px;
+<<<<<<< HEAD
+=======
 
-}
 
+>>>>>>> origin
 .eighth_box:hover .controls{
     visibility: visible; 
     cursor: pointer; 
