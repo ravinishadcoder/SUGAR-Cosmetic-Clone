@@ -60,7 +60,7 @@
 .cartData_card{
     display: flex;
     height: 100px;
-
+    margin-bottom: 15px;
 }
 .imgLeftCard{
     width: 60%;
@@ -70,7 +70,7 @@
 }
 .imgLeftCard img{
     object-fit: cover;
-    /* width: 100%; */
+    width: 70px;
     height: 100%;
     border-radius: 3px;
 }
