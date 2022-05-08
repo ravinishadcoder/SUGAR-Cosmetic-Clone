@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 .top_slide_bar_div,.middle_slide_bar_div{
-    border: 1px solid green;
+    
     width: 1263px;
     height: 302px;
     margin: auto;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 .sliding_window{
-    border: 1px solid black;
+   
     width: 1263px;
     height: 100%;
     margin: auto;
@@ -244,6 +244,7 @@
     
 }
 .controls{
+<<<<<<< HEAD
   position: absolute;
         width: 1200px;
         margin: auto;
@@ -253,6 +254,18 @@
         transform: translateY(-50%);
         margin-left: 30px;
         visibility: hidden;
+=======
+
+    position: absolute;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 30px;
+    visibility: hidden;
+>>>>>>> origin
 }
 .Lcont,.Rcont{
     height: 40px;
@@ -260,6 +273,11 @@
    
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin
 .eighth_box:hover .controls{
     visibility: visible; 
     cursor: pointer; 
