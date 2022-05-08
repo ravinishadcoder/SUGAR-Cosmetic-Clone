@@ -5,12 +5,12 @@ document.querySelector(".footer").innerHTML = fotter();
     let middle_slide_bar_div = document.querySelector(".middle_s_w")
 
     let top_slide_images_arr = [
-
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/d9103d2b-af25-40c3-b41b-90538502b315.gif"},
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/adbd5f7f-557e-487f-aec8-27c79847ec03.jpg"},
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/1571460a-0b29-4920-8c80-7e37f048def4.jpg"},
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/2726f64a-3b5b-4ca9-b066-2ed3d9245582.gif"},
         {url : "https://sugar-mobile-application.s3-ap-south-1.amazonaws.com/177972e0-4583-428b-b4db-da5546b71310.jpg"},
+    
     ]
 
     let bestSellersLeftArr = [
@@ -613,6 +613,28 @@ document.querySelector(".footer").innerHTML = fotter();
     let top_slide_bar_div = document.querySelector(".sliding_window")
     let isPaused = false;
     let topTemp  = 0
+    let winWidth = 1263
+    let i=1;
+
+    setInterval(()=>{
+        
+        
+        if(!isPaused){
+            topTemp = topTemp + winWidth
+            
+            
+            if(topTemp<winWidth*((top_slide_images_arr.length-1))){
+                top_slide_bar_div.style.transform = `translate3d(${-topTemp}px,0px,0px)`
+                top_slide_bar_div.style.transition = ".4s"
+                console.log(topTemp,winWidth,i++)
+            }else{
+                top_slide_bar_div.style.transform = `translate3d(${-0}px,0px,0px)`
+                top_slide_bar_div.style.transition = "0.2s"
+                topTemp = 0
+            }             
+         }
+        },3000)
+       
     let start = (arr,container)=>{
         container.innerText = ""
 
@@ -625,22 +647,9 @@ document.querySelector(".footer").innerHTML = fotter();
        
     } 
     start(top_slide_images_arr,top_slide_bar_div)
-    setInterval(()=>{
-        let winWidth = window.outerWidth
-        
-        if(!isPaused){
-            topTemp = topTemp + winWidth
-            
-            if(topTemp<winWidth*(top_slide_images_arr.length)){
-                top_slide_bar_div.style.transform = `translateX(${-topTemp}px)`
-                top_slide_bar_div.style.transition = ".4s"
-            }else{
-                top_slide_bar_div.style.transform = `translateX(${-0}px)`
-                top_slide_bar_div.style.transition = "0.2s"
-                topTemp = 0
-            }             
-         }
-        },3000)
+
+   
+   
    
         
             top_slide_bar_div.addEventListener("mouseover",()=>{
@@ -676,15 +685,15 @@ document.querySelector(".footer").innerHTML = fotter();
         
         document.querySelector(".lArrow").addEventListener("click",()=>{
         
-            let winWidth = window.outerWidth
+            // let winWidth = 1263
             topTemp = topTemp - winWidth
             let final = winWidth*(top_slide_images_arr.length-1)
            if(topTemp>=0){
             console.group("left",topTemp)
-            top_slide_bar_div.style.transform = `translateX(${-topTemp}px)`
+            top_slide_bar_div.style.transform = `translate3d(${-topTemp}px,0px,0px)`
             top_slide_bar_div.style.transition = ".4s"
            } else{
-            top_slide_bar_div.style.transform = `translateX(${-final}px)`
+            top_slide_bar_div.style.transform = `translate3d(${-final}px,0px,0px)`
             top_slide_bar_div.style.transition = "0.2s"
             topTemp = final
            } 
@@ -693,22 +702,22 @@ document.querySelector(".footer").innerHTML = fotter();
         })
     
         document.querySelector(".rArrow").addEventListener("click",()=>{
-            let winWidth = window.outerWidth
+            // let winWidth = 1263
            
             topTemp = topTemp + winWidth
             
             if(topTemp<winWidth*(top_slide_images_arr.length)){
-                top_slide_bar_div.style.transform = `translateX(${-topTemp}px)`
+                top_slide_bar_div.style.transform = `translate3d(${-topTemp}px,0px,0px)`
                 top_slide_bar_div.style.transition = ".4s"
             }else{
-                top_slide_bar_div.style.transform = `translateX(${-0}px)`
-                top_slide_bar_div.style.transition = "0.2s"
+                top_slide_bar_div.style.transform = `translate3d(${-0}px,0px,0px)`
+                top_slide_bar_div.style.transition = "0.1s"
                 topTemp = 0
             }
             
         })
    
-        
+
 
 //    Best sellers part
 
@@ -782,16 +791,16 @@ let midTemp = 0
 let ispaused = false
 start(middle_slide_bar_arr,middle_slide_bar_div)
 setInterval(()=>{
-    let winWidth = window.outerWidth
+    
     
     if(!ispaused){
         midTemp = midTemp + winWidth
         
         if(midTemp<winWidth*(middle_slide_bar_arr.length)){
-            middle_slide_bar_div.style.transform = `translateX(${-midTemp}px)`
+            middle_slide_bar_div.style.transform = `translate3d(${-midTemp}px,0px,0px)`
             middle_slide_bar_div.style.transition = ".4s"
         }else{
-            middle_slide_bar_div.style.transform = `translateX(${-0}px)`
+            middle_slide_bar_div.style.transform = `translate3d(${-0}px,0px,0px)`
             middle_slide_bar_div.style.transition = "0.2s"
             midTemp = 0
         }             
@@ -824,15 +833,15 @@ setInterval(()=>{
 
 document.querySelector(".qbLArr").addEventListener("click",()=>{
     pause()
-    let winWidth = window.outerWidth
+    
     midTemp = midTemp - winWidth
     let final = winWidth*(middle_slide_bar_arr.length-1)
     if(midTemp>=0){
     console.group("left",midTemp)
-    middle_slide_bar_div.style.transform = `translateX(${-midTemp}px)`
+    middle_slide_bar_div.style.transform = `translate3d(${-midTemp}px)`
     middle_slide_bar_div.style.transition = ".4s"
     } else{
-    middle_slide_bar_div.style.transform = `translateX(${-final}px)`
+    middle_slide_bar_div.style.transform = `translate3d(${-final}px)`
     middle_slide_bar_div.style.transition = "0.2s"
     midTemp = final
 } 
@@ -841,15 +850,15 @@ document.querySelector(".qbLArr").addEventListener("click",()=>{
 })
 
 document.querySelector(".qbRArr").addEventListener("click",()=>{
-let winWidth = window.outerWidth
+
 
     midTemp = midTemp + winWidth
     pause()
     if(midTemp<winWidth*(middle_slide_bar_arr.length)){
-        middle_slide_bar_div.style.transform = `translateX(${-midTemp}px)`
+        middle_slide_bar_div.style.transform = `translate3d(${-midTemp}px,0px,0px)`
         middle_slide_bar_div.style.transition = ".4s"
     }else{
-        middle_slide_bar_div.style.transform = `translateX(${-0}px)`
+        middle_slide_bar_div.style.transform = `translate3d(${-0}px,0px,0px)`
         middle_slide_bar_div.style.transition = "0.2s"
         midTemp = 0
     }
@@ -862,7 +871,7 @@ let winWidth = window.outerWidth
 
     // Hot deals part
 
-   
+
     let main_div = document.querySelector(".slider")
     let imageSlide =(arr,container)=>{
         container.innerText = ""
@@ -885,15 +894,15 @@ let winWidth = window.outerWidth
     let temp = 0
     document.querySelector(".hdLarr").addEventListener("click",()=>{
         
-        let winWidth = window.outerWidth
+        let winWidth = 1263
         temp = temp - winWidth
         let final = winWidth*(hotDealsarr.length-1)
-       if(temp>=0){
+       if(temp>0){
         console.group("left",temp)
-        hdSlide.style.transform = `translateX(${-temp}px)`
+        hdSlide.style.transform = `translate3d(${-temp}px,0px,0px)`
         hdSlide.style.transition = ".4s"
        } else{
-        hdSlide.style.transform = `translateX(${-final}px)`
+        hdSlide.style.transform = `translate3d(${-final}px,0px,0px)`
         hdSlide.style.transition = "0.2s"
         temp = final
        } 
@@ -901,18 +910,17 @@ let winWidth = window.outerWidth
     })
 
     document.querySelector(".hdRarr").addEventListener("click",()=>{
-        let winWidth = window.outerWidth
+        let winWidth = 1263
         
         temp = temp + winWidth
         console.group("right",temp)
-        if(temp<winWidth*(hotDealsarr.length)){
-            hdSlide.style.transform = `translateX(${-temp}px)`
+        if(temp<winWidth*7){
+            hdSlide.style.transform = `translate3d(${-temp}px,0px,0px)`
             hdSlide.style.transition = ".4s"
         }else{
-            hdSlide.style.transform = `translateX(${-0}px)`
+            hdSlide.style.transform = `translate3d(${-0}px,0px,0px)`
             hdSlide.style.transition = "0.2s"
             temp = 0
-            // window.location.reload()
         }
     })
 
@@ -950,8 +958,8 @@ let vid_div = document.querySelector(".vidSlider")
         let vidTemp = 0
         document.querySelector("#left").addEventListener("click",()=>{
                     let winWidth = window.outerWidth
-                vidTemp = vidTemp - winWidth*0.92
-                let final = winWidth*4
+                vidTemp = vidTemp - winWidth*0.74
+               
             if(vidTemp>0){
                 console.group("left",vidTemp)
                 vid_div.style.transform = `translateX(${-vidTemp}px)`
@@ -965,13 +973,13 @@ let vid_div = document.querySelector(".vidSlider")
         document.querySelector("#right").addEventListener("click",()=>{
             let winWidth = window.outerWidth
         
-            vidTemp = vidTemp + winWidth*0.92
+            vidTemp = vidTemp + winWidth*0.74
             console.group("right",vidTemp,winWidth)
             if(vidTemp<winWidth*(3)){
                 vid_div.style.transform = `translateX(${-vidTemp}px)`
                 vid_div.style.transition = ".4s"
             }else{
-                vidTemp = vidTemp - winWidth*0.92
+                vidTemp = vidTemp - winWidth*0.74
             }
         })
    
@@ -1069,15 +1077,14 @@ let vid_div = document.querySelector(".vidSlider")
     let tpTemp = 0
      document.querySelector(".tpLarr").addEventListener("click",()=>{
          
-        let winWidth = window.outerWidth
         tpTemp = tpTemp - winWidth
         let final = winWidth*(topPicksArr.length-1)
        if(tpTemp>=0){
         console.group("left",tpTemp)
-        topPicksdiv.style.transform = `translateX(${-tpTemp}px)`
+        topPicksdiv.style.transform = `translate3d(${-tpTemp}px,0px,0px)`
         topPicksdiv.style.transition = ".4s"
        } else{
-        topPicksdiv.style.transform = `translateX(${-final}px)`
+        topPicksdiv.style.transform = `translate3d(${-final}px,0px,0px)`
         topPicksdiv.style.transition = "0.2s"
         tpTemp = final
        }
@@ -1085,18 +1092,16 @@ let vid_div = document.querySelector(".vidSlider")
      })
  
      document.querySelector(".tpRarr").addEventListener("click",()=>{
-        let winWidth = window.outerWidth
         
         tpTemp = tpTemp + winWidth
         console.group("right",tpTemp)
         if(tpTemp<winWidth*(topPicksArr.length)){
-            topPicksdiv.style.transform = `translateX(${-tpTemp}px)`
+            topPicksdiv.style.transform = `translate3d(${-tpTemp}px,0px,0px)`
             topPicksdiv.style.transition = ".4s"
         }else{
-            topPicksdiv.style.transform = `translateX(${-0}px)`
+            topPicksdiv.style.transform = `translate3d(${-0}px,0px,0px)`
             topPicksdiv.style.transition = "0.2s"
             tpTemp = 0
-            // window.location.reload()
         }
      })
  
@@ -1221,15 +1226,14 @@ let vid_div = document.querySelector(".vidSlider")
     let exTemp = 0
      document.querySelector(".exLarr").addEventListener("click",()=>{
          
-        let winWidth = window.outerWidth
         exTemp = exTemp - winWidth
         let final = winWidth*(exploreArr.length-1)
        if(exTemp>=0){
         console.group("left",exTemp)
-        exploreDiv.style.transform = `translateX(${-exTemp}px)`
+        exploreDiv.style.transform = `translate3d(${-exTemp}px,0px,0px)`
         exploreDiv.style.transition = ".4s"
        } else{
-        exploreDiv.style.transform = `translateX(${-final}px)`
+        exploreDiv.style.transform = `translate3d(${-final}px,0px,0px)`
         exploreDiv.style.transition = "0.2s"
         exTemp = final
        } 
@@ -1237,17 +1241,15 @@ let vid_div = document.querySelector(".vidSlider")
      })
  
      document.querySelector(".exRarr").addEventListener("click",()=>{
-        let winWidth = window.outerWidth
         exTemp = exTemp + winWidth
         console.group("right",exTemp)
         if(exTemp<winWidth*(exploreArr.length)){
-            exploreDiv.style.transform = `translateX(${-exTemp}px)`
+            exploreDiv.style.transform = `translate3d(${-exTemp}px,0px,0px)`
             exploreDiv.style.transition = ".4s"
         }else{
-            exploreDiv.style.transform = `translateX(${-0}px)`
+            exploreDiv.style.transform = `translate3d(${-0}px,0px,0px)`
             exploreDiv.style.transition = "0.2s"
             exTemp = 0
-            // window.location.reload()
         }
      })
 
