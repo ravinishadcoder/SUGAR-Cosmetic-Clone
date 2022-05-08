@@ -52,7 +52,6 @@ const appendData = (data) => {
         div.append(div_img_top_num,imgDiv,textDiv,priceDiv,ratingDiv,fevOuterDiv)
         containerContent.append(div);
     });
-    console.log(ratingArray);
 }
 let urlDataArray = []
 const fetchData = async () => {
@@ -80,17 +79,25 @@ document.querySelector('.applyFilter').addEventListener('click', ()=>{
     for(let m = 0; m<xy.length; m++){
         if(xy[m].childNodes[0].checked === true){
             filterArr[xy[m].innerText.toLowerCase()] = true;
-            // filterArr.push([xy[m].innerText,xy[m].childNodes[0].checked])
         }
     }
-    for(let nn = 0; nn<urlDataArray[0].length; nn++){
-        if(urlDataArray[0][nn].product_type in filterArr){
-            arrF.push(urlDataArray[0][nn])
-            console.log(urlDataArray[0][nn].product_type);
+    if(Object.keys(filterArr).length > 0){
+        for(let nn = 0; nn<urlDataArray[0].length; nn++){
+            if(urlDataArray[0][nn].product_type in filterArr){
+                arrF.push(urlDataArray[0][nn])
+            }
         }
+        appendData(arrF);
     }
-    // console.log(xy)
-    console.log(arrF)
-    appendData(arrF);
+    else{
+        appendData(urlDataArray[0]);
+    }
 })
 
+document.querySelector('.cursor').addEventListener('click', ()=> {
+    let xy = document.querySelector('.inputCheck').children;
+    for(let m = 0; m<xy.length; m++){
+        xy[m].childNodes[0].checked = false;
+    }
+    appendData(urlDataArray[0]);
+})
