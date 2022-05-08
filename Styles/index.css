@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 .top_slide_bar_div,.middle_slide_bar_div{
-    border: 1px solid green;
+    
     width: 1263px;
     height: 302px;
     margin: auto;
@@ -19,7 +19,7 @@
     box-sizing: border-box;
 }
 .sliding_window{
-    border: 1px solid black;
+   
     width: 1263px;
     height: 100%;
     margin: auto;
@@ -247,31 +247,20 @@
     
 }
 .controls{
-
     position: absolute;
-        width: 1200px;
-        margin: auto;
-        display: flex;
-        justify-content: space-between;
-        top: 50%;
-        transform: translateY(-50%);
-        margin-left: 30px;
-        visibility: hidden;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 30px;
+    visibility: hidden;
 }
 .Lcont,.Rcont{
-    /* position: absolute; */
     height: 40px;
     width: 40px;
    
-
-    z-index: 100;
-    position: absolute;
-    margin: auto;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    visibility: visible;
-    width: 90%;
 }
 
 .common > img{

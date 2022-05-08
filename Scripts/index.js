@@ -611,6 +611,7 @@
     let top_slide_bar_div = document.querySelector(".sliding_window")
     let isPaused = false;
     let topTemp  = 0
+    let winWidth = 1263;
     setInterval(()=>{
         
         
