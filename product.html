@@ -11,10 +11,10 @@
       src="https://kit.fontawesome.com/6a99807cc4.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./SUGAR-Cosmetic-Clone/Styles/product.css"/>
-    <link rel="stylesheet" href="./SUGAR-Cosmetic-Clone/Styles/navbar.css" />
-    <link rel="stylesheet" href="./SUGAR-Cosmetic-Clone/Styles/signin.css">
-    <link rel="stylesheet" href="./SUGAR-Cosmetic-Clone/Styles/footer.css">
+    <link rel="stylesheet" href="./Styles/product.css"/>
+    <link rel="stylesheet" href="./Styles/navbar.css" />
+    <link rel="stylesheet" href="./Styles/signin.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
     
 </head>
 
@@ -44,7 +44,7 @@
           <p id="pr_rating"></p>
           <p id="pr_price"></p>
           <button id="addbtn" onclick="addToCartBtn()">Add to Cart </button>
-          <p><a href="/wishlist.html">Save to wishlist</a></p>
+          <p><a href="wishlist.html">Save to wishlist</a></p>
        </div>
 
     </div>
@@ -91,7 +91,7 @@
    <div id="footer"></div>
 </body>
 </html>
-<script src="./SUGAR-Cosmetic-Clone/Scripts/common.js" type="module"></script>
+<script src="./Scripts/common.js" type="module"></script>
 <script>
    let ProducData = JSON.parse(localStorage.getItem("ProductPage"));
    console.log(ProducData.name);
