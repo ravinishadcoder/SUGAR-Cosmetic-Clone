@@ -1,11 +1,15 @@
 /* /top Slide bar */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100&family=Inter:wght@200;700&family=Nunito+Sans:wght@200&family=Open+Sans:wght@300;400&family=Poppins:wght@200;300;500&family=Quicksand:wght@300&family=Ubuntu:wght@500&display=swap');      
+*{
+  font-family:Quicksand ;
+}
 .middle_part{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 .top_slide_bar_div,.middle_slide_bar_div{
-    border: 1px solid green;
+    
     width: 1263px;
     height: 302px;
     margin: auto;
@@ -15,7 +19,7 @@
     box-sizing: border-box;
 }
 .sliding_window{
-    border: 1px solid black;
+   
     width: 1263px;
     height: 100%;
     margin: auto;
@@ -214,9 +218,6 @@
 }
 
 
-
-
-
 /* video part starts */
 
 .eighth_box_video_div{
@@ -243,8 +244,8 @@
     
 }
 .controls{
-
-    position: absolute;
+<<<<<<< HEAD
+  position: absolute;
         width: 1200px;
         margin: auto;
         display: flex;
@@ -253,33 +254,38 @@
         transform: translateY(-50%);
         margin-left: 30px;
         visibility: hidden;
+=======
+
+    position: absolute;
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 30px;
+    visibility: hidden;
+>>>>>>> origin
 }
 .Lcont,.Rcont{
-    /* position: absolute; */
     height: 40px;
     width: 40px;
    
-
-    z-index: 100;
-    position: absolute;
-    margin: auto;
-    border: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    visibility: visible;
-    width: 90%;
 }
 
-.common > img{
-    width: 30px;
+<<<<<<< HEAD
+=======
 
-}
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 
 =======
 >>>>>>> fbd69b16685646c8d7a2e5960471d5ab41df3877
+=======
+>>>>>>> origin
+>>>>>>> d6caef6b8312d78464095192c4bb27c74b16eabf
 .eighth_box:hover .controls{
     visibility: visible; 
     cursor: pointer; 

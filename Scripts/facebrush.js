@@ -2,7 +2,7 @@
  let faceBrush = [
        
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-12-min.jpg?v=1627573647",
         name: "Blend Trend Dual Face Brush - 075 Powder + … ",
         price: 599,
@@ -11,7 +11,7 @@
     }, 
 
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/BlendTrendFaceBrush-003Contour.jpg?v=1627659996",
         name: "Blend Trend Face Brush - 003 Cont…",
         price: 399,
@@ -20,7 +20,7 @@
     },
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/BlendTrendFoundationBrush-052Kabuki.jpg?v=1627573664",
         name: "Blend Trend Foundation Brush - 052…",
         price: 399,
@@ -29,7 +29,7 @@
     }, 
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/BlendTrendFaceBrush-007Powder.jpg?v=1627660008",
         name: "Blend Trend Face Brush - 007 Powder",
         price: 399,
@@ -38,7 +38,7 @@
     },
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/BlendTrendFaceBrush-006Highlighter.jpg?v=1627660002",
         name: "Blend Trend Face Brush - 006 Highl…",
         price: 399,
@@ -47,7 +47,7 @@
     },
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/BlendTrendFaceBrush-001Blush.jpg?v=1627659984",
         name: "Blend Trend Face Brush - 001 Blush",
         price: 399,
@@ -56,7 +56,7 @@
     },
     
     {
-        image_url:
+        image_link:
             "https://cdn.shopify.com/s/files/1/0906/2558/products/BlendTrendFoundationBrush-051Flat.jpg?v=1627573670",
         name: "Blend Trend Foundation Brush - 051…",
         price: 399,
@@ -82,7 +82,7 @@ faceBrush.map(function (elem) {
     img_shade.src = elem.shade_image;
 
     var img = document.createElement("img");
-    img.src = elem.image_url;
+    img.src = elem.image_link;
     img.classList.add("main-img");
 
     var name = document.createElement("p");
@@ -119,6 +119,11 @@ faceBrush.map(function (elem) {
         addToCart(elem);
     });
 
+    box.addEventListener("click",()=>{
+        ProductPage(elem);
+        window.location.href = "product.html"
+    })
+
     top.append(shade, img_shade);
     price_wrapper.append(strike, price)
     rating_wrapper.append(star_icon, rating);
@@ -143,3 +148,7 @@ var cartArray= JSON.parse(localStorage.getItem("cartItem")) || [];
 
     localStorage.setItem("wishlistItem",JSON.stringify(cartwish))
  }
+
+ function ProductPage(elem){
+    localStorage.setItem("ProductPage",JSON.stringify(elem))
+}

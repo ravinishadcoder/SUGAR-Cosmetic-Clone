@@ -4,13 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../Styles/product.css"/>
+    <link rel="icon" type="image/x-icon" href="https://1000logos.net/wp-content/uploads/2020/07/SUGAR-Cosmetics-Logo1.jpg">
 
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/6a99807cc4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../Styles/product.css"/>
+    <link rel="stylesheet" href="../Styles/navbar.css" />
+    <link rel="stylesheet" href="../Styles/signin.css">
+    <link rel="stylesheet" href="../Styles/footer.css">
     
 </head>
 
 <body>
+    <div id="navbar"></div>
+    <br>
     <div id="hometitle">
     <img src="https://in.sugarcosmetics.com/desc-images/breadcrumb_home.svg"/>
     <p>/
@@ -26,14 +36,14 @@
     <div class="promain">
     
        <div id="proimgdiv">
-          <img src="https://cdn.shopify.com/s/files/1/0906/2558/products/Blend-Trend-WBG-images-14_1.jpg"/>
+         
        </div>
 
        <div id="prodetdiv">
-          <h1>Blend Trend Eyeshadow Brush - 043 Round Xl</h1>
-          <p>4.5 (5)</p>
-          <p>Rs 399.00</p>
-          <button id="addbtn">Add to Cart </button>
+          <h1 id="prname"></h1>
+          <p id="pr_rating"></p>
+          <p id="pr_price"></p>
+          <button id="addbtn" onclick="addToCartBtn()">Add to Cart </button>
           <p><a href="wishlist.html">Save to wishlist</a></p>
        </div>
 
@@ -76,10 +86,37 @@
         <li>SUGAR Blend Trend Brushes feature high quality synthetic, 100% cruelty-free bristles that ensure precise application and diffusion of product</li>
         <li>Easy to clean and durable, these makeup brushes are made with high-quality aluminum ferrules and premium wooden handles</li>
     </ul>
-  </div> 
+  </div>
+  <br>
+   <div id="footer"></div>
 </body>
 </html>
-
+<script src="../Scripts/common.js" type="module"></script>
 <script>
+   let ProducData = JSON.parse(localStorage.getItem("ProductPage"));
+   console.log(ProducData.name);
+   
+   let img = document.createElement("img");
+   img.src = ProducData.image_link;
+   document.getElementById("proimgdiv").append(img);
+   document.getElementById("prname").innerText = ProducData.name;
+   document.getElementById("pr_rating").innerText = "Rating : "+ProducData.rating;
+   document.getElementById("pr_price").innerText = "Rs. : "+ProducData.price;
+   
+   let cartData = JSON.parse(localStorage.getItem('cartItems')) || [];
+   const addToCartBtn = () => {
+       let obj = {
+           img:ProducData.image_link,
+           item_detail:'',
+           price:+ProducData.price,
+           qty:1,
+           title:ProducData.name
+       }
+       cartData.push(obj);
+       console.log('cartData:', cartData)
+       
+       localStorage.setItem('cartItems', JSON.stringify(cartData));
+       window.location.reload()
+   }
    
 </script>

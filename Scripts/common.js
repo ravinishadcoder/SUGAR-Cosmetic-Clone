@@ -1,6 +1,18 @@
 import {navbar,fotter} from "../Components/navbar.js";
 
-document.getElementById("navbar").innerHTML = navbar()
+
+let ProducData = JSON.parse(localStorage.getItem("cartItems"))||[];
+
+
+document.getElementById("navbar").innerHTML = navbar(ProducData.length);
+
+console.log(ProducData.length)
+if(ProducData.length>0){
+    let cart_count = document.getElementById("counter");
+    cart_count.style.display = "block"
+}
+
+
 document.getElementById("footer").innerHTML = fotter()
 import {signinpage,infopage} from "../Components/signinpage.js"
 document.getElementById("signappend").innerHTML = signinpage();
@@ -116,5 +128,4 @@ search.addEventListener("click",()=>{
 })
 
 
-// autotab
 
