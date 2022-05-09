@@ -63,20 +63,23 @@ varifyotp.addEventListener("click",()=>{
        userName();
    }
 })
-
+var obj = JSON.parse(localStorage.getItem("userDetails"))||{};
 function userName(){
     let savebtn = document.getElementById("savebtn");
     savebtn.addEventListener("click",()=>{
     let username = document.getElementById("username").value;
     let lastname = document.getElementById("userlastname").value;
-    let obj = {username,lastname};
+    obj = {username,lastname};
     localStorage.setItem("userDetails",JSON.stringify(obj));
     window.location.href = "index.html"
     
    })  
 }
-   let userInfo = JSON.parse(localStorage.getItem("userDetails"))
-    console.log(userInfo)
+     localStorage.setItem("userDetails",JSON.stringify(obj));
+  
+    let userInfo = JSON.parse(localStorage.getItem("userDetails"));
+    //console.log("obj",Object.keys(userInfo).length)
+  if(Object.keys(userInfo).length>0){
     let changename = document.getElementById("changename");
     changename.innerText = "Hi,"+userInfo.username+" "+userInfo.lastname+" " ;
     let changebox = document.getElementById("navlogin");
@@ -84,7 +87,7 @@ function userName(){
     changebox.style.backgroundColor = "lightgrey";
     changebox.style.height = "30px";
     changebox.style.padding = "5px";
-
+  }
 // search functionallity
 
 let search = document.getElementById("nav_btn");

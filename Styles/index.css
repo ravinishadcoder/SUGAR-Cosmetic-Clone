@@ -259,10 +259,27 @@
     height: 40px;
     width: 40px;
    
+
+    z-index: 100;
+    position: absolute;
+    margin: auto;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    visibility: visible;
+    width: 90%;
 }
 
+.common > img{
+    width: 30px;
+
+}
+
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> fbd69b16685646c8d7a2e5960471d5ab41df3877
 .eighth_box:hover .controls{
     visibility: visible; 
     cursor: pointer; 
