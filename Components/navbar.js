@@ -4,7 +4,7 @@ let navbar = (abc)=>{
     return `<div id="temp">
     <div id="navmain">
       <div id="navlogo">
-      <a href="../HTML/index.html"><img
+      <a href="/index.html"><img
       src="https://in.sugarcosmetics.com/desc-images/SUGARLogo1.png"
       alt=""
     /></a>
@@ -54,9 +54,9 @@ let navbar = (abc)=>{
         </p>
       </div>
       <div id="navcart">
-      <a href="../HTML/wishlist.html" ><i class="fa-solid fa-heart"></i></a>
-        <a href="../HTML/cart.html" id="cart_count"><i class="fa-solid fa-bag-shopping"></i><span><div id="counter">${abc}</div></span></a>
-        <a href= "../HTML/offerpage.html">
+      <a href="/wishlist.html" ><i class="fa-solid fa-heart"></i></a>
+        <a href="/cart.html" id="cart_count"><i class="fa-solid fa-bag-shopping"></i><span><div id="counter">${abc}</div></span></a>
+        <a href= "/offerpage.html">
         <img
           src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg"
           alt=""
@@ -69,22 +69,22 @@ let navbar = (abc)=>{
   <div id="navcat">
     <div id="maincat">
       <div class="navdropdwn">
-        <p class="navdropbtn"> <a href="../HTML/makeup.html">MAKEUP</a></p>
+        <p class="navdropbtn"> <a href="/makeup.html">MAKEUP</a></p>
         <div class="dropdwn-content">
-          <a href="../HTML/lips.html">Lips</a>
-          <a href="../HTML/face.html">Face</a>
-          <a href="../HTML/eye.html">Eyes</a>
+          <a href="/lips.html">Lips</a>
+          <a href="/face.html">Face</a>
+          <a href="/eye.html">Eyes</a>
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn"> <a href="../HTML/Brush.html">BRUSHES</a></p>
+        <p class="navdropbtn"> <a href="/Brush.html">BRUSHES</a></p>
         <div class="dropdwn-content">
-          <a href="../HTML/facebrush.html">FACE BRUSHES</a>
-          <a href="../HTML/eyebrush.html">EYES BRUSHES</a>
+          <a href="/facebrush.html">FACE BRUSHES</a>
+          <a href="/eyebrush.html">EYES BRUSHES</a>
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn"><a href="../HTML/skincare.html">SKINCARE</a></p>
+        <p class="navdropbtn"><a href="/skincare.html">SKINCARE</a></p>
         <div class="dropdwn-content">
           <a href="">MOISTURIZERS</a>
           <a href="">MASKS</a>
@@ -95,7 +95,7 @@ let navbar = (abc)=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn"><a href="../HTML/trending.html">TRENDING</a></p>
+        <p class="navdropbtn"><a href="/trending.html">TRENDING</a></p>
         <div class="dropdwn-content">
           <a href="">SUGAR MERCH STATION</a>
           <a href="">MAKEUP KITS</a>
@@ -111,7 +111,7 @@ let navbar = (abc)=>{
         </div>
       </div>
       <div class="navdropdwn">
-        <p class="navdropbtn"><a href="../HTML/offerpage.html">OFFERS</a></p>
+        <p class="navdropbtn"><a href="/offerpage.html">OFFERS</a></p>
         
       </div>
     </div>

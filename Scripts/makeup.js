@@ -3,7 +3,7 @@
 
  let fetchdata=async(value)=>{
     try{
-      const api = `http://makeup-api.herokuapp.com/api/v1/products.json?brand=${value}`;
+      const api = `https://makeup-api.herokuapp.com/api/v1/products.json?brand=${value}`;
 
       let res= await fetch(api);
      var data= await res.json();
