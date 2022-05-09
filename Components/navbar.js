@@ -54,13 +54,15 @@ let navbar = (abc)=>{
         </p>
       </div>
       <div id="navcart">
-        <i class="fa-solid fa-heart"></i>
+      <a href="../HTML/wishlist.html" ><i class="fa-solid fa-heart"></i></a>
         <a href="../HTML/cart.html" id="cart_count"><i class="fa-solid fa-bag-shopping"></i><span><div id="counter">${abc}</div></span></a>
+        <a href= "../HTML/offerpage.html">
         <img
           src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg"
           alt=""
           style="width: 18px"
         />
+        </a>
       </div>
     </div>
   </div>

@@ -21,6 +21,9 @@
 // ]
 
 // localStorage.setItem('cartItems', JSON.stringify(arr));
+import {payment} from "../Scripts/payment.js";
+let paymentPage = payment();
+
 let array = JSON.parse(localStorage.getItem('cartItems')) || [];
 console.log(array)
 let totalPrice=0;
@@ -198,4 +201,44 @@ const itemIncrese = (index,controlValue,spanQty,itemTotal) => {
     totalPriceHTML.innerText = subTotal.toFixed(2);
     subTotalPayment.innerText = subTotal.toFixed(2);
     finalAmt.innerText = subTotal.toFixed(2);
+}
+
+
+
+document.querySelector(".deliveryInfo_btn").addEventListener("click",()=>{
+    let cartPriceOffer = document.querySelector(".cartPriceOffer ");
+    
+    document.querySelector(".priceContainer").innerHTML = paymentPage;
+    paymentinfo()
+    
+})
+
+ function paymentinfo(){
+document.getElementById("upi").addEventListener("click",()=>{
+    let paydrop = document.querySelector(".paydrop");
+    paydrop.style.display = "block" 
+    let upi = document.getElementById("upi");
+    upi.style.border = "none"
+    upi.style.backgroundColor = 'white'
+ })
+ document.getElementById("debitcard").addEventListener("click",()=>{
+    let paydrop = document.getElementById("dropdebit");
+    
+    paydrop.style.display = "block" 
+    let debitborder = document.getElementById("debitcard");
+    debitborder.style.border = "none";
+    debitborder.style.backgroundColor = "white"
+ })
+ document.getElementById("cash").addEventListener("click",()=>{
+    let paydrop = document.getElementById("cashdrop");
+    
+    paydrop.style.display = "block" 
+    let debitborder = document.getElementById("cash");
+    debitborder.style.border = "none";
+    debitborder.style.backgroundColor = "white"
+ })
+
+ document.querySelector(".PaymentInfo_btn").addEventListener("click",()=>{
+     window.location.href = "succesfull.html"
+ })
 }
