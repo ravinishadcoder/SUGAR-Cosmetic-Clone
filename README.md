@@ -1,7 +1,6 @@
 
 # Sugar Cosmetic - clone 
-
-This is the site where you can various type of cosmetic products like makeup kit , powder , brushes etc . This is very popular site in India .
+- Sugar cosmetic is selling online beauty products, This is the site where you can various type of cosmetic products like makeup kit , powder , brushes etc . This is very popular site in India .  This is a clone project of sugercosmetic.com. this is collobrative project, It took 4 days to complete.
 
 
 
