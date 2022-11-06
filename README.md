@@ -31,7 +31,7 @@ In this majority parts , we created by using JavaScript because We tried to make
 
 
 ## Netlify link - 
-https://melodic-malabi-d69a87.netlify.app/
+https://zingy-druid-0af270.netlify.app/
 
 ## Git Hub Repo - 
 https://github.com/ravinishadcoder/SUGAR-Cosmetic-Clone
